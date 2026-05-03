@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Medical Summit Cozumel 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{
+  --w:#FFFFFF;--ow:#F7FBFD;--bl:#E0F9FB;--bm:#67E8F9;
+  --b:#22D3EE;--bd:#0891B2;--bdeep:#0E7490;
+  --gold:#C9A84C;--gl:#E5C97A;--gd:#9A7830;
+  --td:#1A3A4A;--tm:#1E6D82;--tmut:#5EADBE;
+  --border:rgba(34,211,238,.18);
+  --red:#E05555;--green:#2E9E6B;
+  --max:1100px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--w);color:var(--td);overflow-x:hidden}
+
+
+
+/* ── NAV ── */
+nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(255,255,255,.97);border-bottom:1px solid var(--bl);box-shadow:0 2px 16px rgba(34,211,238,.07)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:.7rem;cursor:pointer;text-decoration:none}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:.12em;color:var(--bdeep)}
+.nav-logo span{color:var(--gold)}
+.nav-tag{font-size:.53rem;letter-spacing:.13em;color:var(--tmut);text-transform:uppercase;border-left:1px solid var(--border);padding-left:.7rem;line-height:1.4}
+.nav-links{display:flex;gap:1.6rem;list-style:none;align-items:center}
+.nav-links a{color:var(--tm);text-decoration:none;font-size:.65rem;letter-spacing:.11em;text-transform:uppercase;cursor:pointer;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:var(--gold);transition:width .25s}
+.nav-links a:hover{color:var(--bdeep)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{padding:.48rem 1.3rem!important;background:var(--bdeep)!important;color:var(--w)!important;border-radius:2px}
+.nav-cta:hover{background:var(--gold)!important}
+.nav-cta::after{display:none!important}
+
+/* ── PAGE WRAPPER ── */
+.page{position:relative;z-index:1}
+
+/* ── SECTION BASE ── */
+section{padding:5rem 2rem;position:relative;z-index:1}
+.container{max-width:var(--max);margin:0 auto}
+.sec-label{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;text-align:center}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.2vw,2.9rem);font-weight:300;color:var(--td);line-height:1.2;text-align:center;margin-bottom:2.5rem}
+.sec-title em{font-style:italic;color:var(--bdeep)}
+.sec-desc{font-size:.78rem;color:var(--tm);line-height:1.85;text-align:center;max-width:650px;margin:0 auto 2.5rem}
+.divider{height:1px;background:linear-gradient(to right,transparent,rgba(34,211,238,.22),transparent);margin:0 auto;max-width:var(--max)}
+
+/* ── HERO ── */
+#hero{min-height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9rem 2rem 5rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=1600&q=80');background-size:cover;background-position:center;filter:brightness(.35) saturate(1.2)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(14,116,144,.75) 0%,rgba(8,145,178,.4) 40%,rgba(201,168,76,.12) 100%)}
+.hero-glow1{position:absolute;top:-80px;right:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.18) 0%,transparent 65%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-40px;left:-40px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.12) 0%,transparent 65%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:.4rem 1.4rem;border-radius:999px;margin-bottom:1.8rem;animation:fadeUp .8s ease .2s both;backdrop-filter:blur(6px)}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gl);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,6.2rem);font-weight:300;line-height:1.04;color:#fff;animation:fadeUp .8s ease .3s both;text-shadow:0 2px 30px rgba(0,0,0,.3)}
+.hero-title em{font-style:italic;color:var(--gl)}
+.hero-sub{margin-top:1rem;font-size:.73rem;letter-spacing:.17em;color:rgba(255,255,255,.7);text-transform:uppercase;animation:fadeUp .8s ease .45s both}
+.hero-line{width:70px;height:1px;background:linear-gradient(to right,transparent,var(--gl),transparent);margin:2rem auto;animation:fadeUp .8s ease .55s both}
+.hero-meta{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease .65s both}
+.hm{text-align:center}
+.hm-l{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gl);margin-bottom:.25rem}
+.hm-v{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:#fff}
+.hero-btns{margin-top:2.8rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp .8s ease .8s both}
+.hero-wave{position:absolute;bottom:0;left:0;right:0;line-height:0}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── BTNS ── */
+.btn{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;transition:all .3s cubic-bezier(.34,1.56,.64,1);text-decoration:none;padding:.85rem 2.2rem;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.15);transform:translateX(-100%) skewX(-15deg);transition:transform .4s ease}
+.btn:hover::after{transform:translateX(110%) skewX(-15deg)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(14,116,144,.25)}
+.btn:active{transform:translateY(-1px)}
+.btn-p{background:var(--bdeep);color:var(--w)}
+.btn-p:hover{background:var(--gold)}
+.btn-o{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.5);color:#fff;clip-path:none;backdrop-filter:blur(4px)}
+.btn-o:hover{background:rgba(255,255,255,.2);border-color:#fff}
+
+/* plan-btn animations */
+.plan-btn{position:relative;overflow:hidden}
+.plan-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--bdeep),var(--b));transform:scaleX(0);transform-origin:left;transition:transform .35s ease;z-index:0}
+.plan-btn:hover::before,.plan-card.featured .plan-btn::before{transform:scaleX(1)}
+.plan-btn span,.plan-btn{position:relative;z-index:1}
+.plan-btn:hover{color:#fff!important;border-color:transparent!important}
+
+/* pat-btn */
+.pat-btn{position:relative;overflow:hidden}
+.pat-btn::before{content:'';position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s ease;z-index:0}
+.pat-btn:hover::before{transform:scaleX(1)}
+.pat-btn:hover{color:#fff!important}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(32px);transition:opacity .7s ease,transform .7s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(.93);transition:opacity .6s ease,transform .6s ease}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+/* stagger children */
+.stagger > *{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+.stagger.visible > *{opacity:1;transform:translateY(0)}
+.stagger.visible > *:nth-child(1){transition-delay:.05s}
+.stagger.visible > *:nth-child(2){transition-delay:.12s}
+.stagger.visible > *:nth-child(3){transition-delay:.19s}
+.stagger.visible > *:nth-child(4){transition-delay:.26s}
+.stagger.visible > *:nth-child(5){transition-delay:.33s}
+.stagger.visible > *:nth-child(6){transition-delay:.4s}
+.stagger.visible > *:nth-child(7){transition-delay:.47s}
+.stagger.visible > *:nth-child(8){transition-delay:.54s}
+.stagger.visible > *:nth-child(9){transition-delay:.61s}
+.stagger.visible > *:nth-child(10){transition-delay:.68s}
+.stagger.visible > *:nth-child(11){transition-delay:.75s}
+
+/* card hover lifts */
+.comite-card{transition:box-shadow .3s,transform .3s}
+.comite-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(34,211,238,.16)}
+.ponente-card{transition:box-shadow .3s,border-color .3s,transform .3s}
+.ponente-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(34,211,238,.14)}
+.plan-card{transition:box-shadow .3s,border-color .3s,transform .3s}
+.plan-card:hover{transform:translateY(-5px)}
+.about-card{transition:background .3s,transform .3s,box-shadow .3s}
+.about-card:hover{background:rgba(255,255,255,.13);transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.pat-card{transition:border-color .25s,transform .3s,box-shadow .3s}
+.pat-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(34,211,238,.12)}
+.pat-item{transition:border-color .25s,transform .3s}
+.pat-item:hover{transform:translateY(-3px);border-color:var(--bm)}
+
+/* section label animated underline */
+.sec-label{display:inline-block;position:relative}
+
+/* agenda row hover */
+.agenda-row{transition:background .2s,padding-left .25s,transform .2s}
+.agenda-row:hover{transform:translateX(4px)}
+
+/* stat items pulse on load */
+@keyframes countUp{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.sbi{animation:countUp .6s ease both}
+.sbi:nth-child(1){animation-delay:.1s}
+.sbi:nth-child(2){animation-delay:.2s}
+.sbi:nth-child(3){animation-delay:.3s}
+.sbi:nth-child(4){animation-delay:.4s}
+
+/* day tab active indicator */
+.day-tab{position:relative;overflow:hidden}
+.day-tab::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;background:var(--bdeep);transition:width .3s ease,left .3s ease}
+.day-tab.active::after{width:100%;left:0}
+
+/* comite avatar spin on hover */
+.comite-avatar{transition:transform .4s ease,background .3s,color .3s}
+.comite-card:hover .comite-avatar{transform:rotate(10deg) scale(1.1);background:var(--bdeep);color:#fff}
+
+/* ponente avatar */
+.ponente-av{transition:transform .3s ease,opacity .3s}
+.ponente-card:hover .ponente-av{transform:scale(1.12);opacity:.9}
+
+/* gold shimmer on section titles */
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+.sec-title em{background:linear-gradient(90deg,var(--bdeep) 0%,var(--b) 40%,var(--gold) 60%,var(--bdeep) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+
+/* ── STATS ── */
+#stats-band{background:var(--bdeep);position:relative;z-index:1}
+.stats-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.sbi{padding:2.4rem 1.5rem;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
+.sbi:last-child{border-right:none}
+.sbi-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--gl);line-height:1}
+.sbi-lbl{margin-top:.4rem;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+/* ── ABOUT ── */
+#about{background:var(--bdeep);color:#fff}
+#about .sec-label{color:var(--gl)}
+#about .sec-title{color:#fff}
+#about .sec-title em{color:var(--gl)}
+#about .sec-desc{color:rgba(255,255,255,.72)}
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:.5rem}
+.about-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:2rem;text-align:center}
+.about-icon{font-size:1.8rem;margin-bottom:.8rem}
+.about-card-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gl);margin-bottom:.6rem}
+.about-card-text{font-size:.7rem;color:rgba(255,255,255,.65);line-height:1.75}
+
+/* ── COMITE ── */
+#comite{background:var(--ow)}
+.comite-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.comite-card{background:var(--w);border:1px solid var(--border);padding:2rem;position:relative;overflow:hidden;transition:box-shadow .3s}
+.comite-card:hover{box-shadow:0 8px 28px rgba(34,211,238,.13)}
+.comite-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--bdeep),var(--gold))}
+.comite-avatar{width:54px;height:54px;border-radius:50%;background:var(--bl);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--bdeep);margin-bottom:1rem;border:2px solid var(--bm)}
+.comite-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--td);margin-bottom:.25rem}
+.comite-role{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+.comite-bio{font-size:.7rem;color:var(--tm);line-height:1.7}
+
+/* ── PONENTES ── */
+#ponentes{background:var(--w)}
+.ponentes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.ponente-card{background:var(--ow);border:1px solid var(--border);padding:1.5rem;transition:box-shadow .3s,border-color .3s}
+.ponente-card:hover{box-shadow:0 6px 22px rgba(34,211,238,.12);border-color:var(--bm)}
+.ponente-av{width:46px;height:46px;border-radius:50%;background:var(--bdeep);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:.85rem}
+.ponente-name{font-size:.76rem;font-weight:600;color:var(--td);margin-bottom:.2rem;line-height:1.3}
+.ponente-esp{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.ponente-bio{font-size:.65rem;color:var(--tm);line-height:1.65}
+
+/* ── AGENDA ── */
+#agenda{background:var(--ow)}
+.day-tabs{display:flex;border-bottom:2px solid var(--bl);margin-bottom:0;flex-wrap:wrap}
+.day-tab{padding:.75rem 1.8rem;border:none;background:transparent;font-family:'Montserrat',sans-serif;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;color:var(--tmut);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s}
+.day-tab.active{color:var(--bdeep);border-bottom-color:var(--bdeep);font-weight:600}
+.day-tab:hover{color:var(--bdeep)}
+.day-panel{display:none}
+.day-panel.active{display:block;animation:fadeUp .3s ease}
+.agenda-row{display:grid;grid-template-columns:110px 1fr auto;gap:1.5rem;align-items:center;padding:1.3rem 0;border-bottom:1px solid var(--bl);transition:background .15s}
+.agenda-row:last-child{border-bottom:none}
+.agenda-row:hover{background:rgba(34,211,238,.04);padding-left:.5rem}
+.ag-time{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);font-weight:300}
+.ag-title{font-size:.76rem;font-weight:600;color:var(--td);margin-bottom:.2rem}
+.ag-spk{font-size:.64rem;color:var(--tmut)}
+.badge{font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .7rem;border-radius:999px;white-space:nowrap}
+.b-conf{background:rgba(34,211,238,.1);color:var(--bd);border:1px solid var(--bm)}
+.b-taller{background:rgba(201,168,76,.1);color:var(--gd);border:1px solid var(--gold)}
+.b-mesa{background:rgba(14,116,144,.08);color:var(--bdeep);border:1px solid var(--bd)}
+.b-dep{background:rgba(46,158,107,.1);color:var(--green);border:1px solid var(--green)}
+
+/* ── REGISTRO ── */
+#registro{background:var(--w)}
+.reg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:3rem}
+.reg-grid-6{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;margin-bottom:3rem}
+@media(max-width:1000px){.reg-grid-6{grid-template-columns:repeat(3,1fr)}}
+.plan-card{background:var(--w);border:1px solid var(--border);padding:1.8rem 1.6rem;position:relative;transition:box-shadow .3s,border-color .3s}
+.plan-card:hover{box-shadow:0 8px 28px rgba(34,211,238,.12);border-color:rgba(34,211,238,.3)}
+.plan-card.featured{border-color:var(--bm);border-width:2px}
+.plan-featured-tag{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--bdeep);color:#fff;font-size:.5rem;letter-spacing:.18em;padding:.25rem .9rem;white-space:nowrap}
+.plan-name{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--b);margin-bottom:.8rem}
+.plan-price{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--td);line-height:1}
+.plan-price sup{font-size:.9rem;color:var(--gold);vertical-align:super}
+.plan-period{font-size:.58rem;color:var(--tmut);margin-bottom:1.4rem}
+.plan-feats{list-style:none;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:.55rem}
+.plan-feats li{font-size:.68rem;color:var(--tm);padding-left:1rem;position:relative}
+.plan-feats li::before{content:'›';position:absolute;left:0;color:var(--bm);font-weight:bold}
+.plan-btn{width:100%;padding:.7rem;background:transparent;border:1.5px solid var(--bm);color:var(--bdeep);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;font-family:'Montserrat',sans-serif;transition:background .25s,color .25s}
+.plan-btn:hover,.plan-card.featured .plan-btn{background:var(--bdeep);color:#fff;border-color:var(--bdeep)}
+.plan-card.featured .plan-btn:hover{background:var(--gold);border-color:var(--gold)}
+.hosp-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--td);text-align:center;margin-bottom:1.5rem}
+.hosp-title em{color:var(--bdeep);font-style:italic}
+
+/* ── SEDE ── */
+#sede{background:var(--ow)}
+.sede-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.sede-box{border-radius:12px;background:linear-gradient(135deg,var(--bl),#E0F9FB,#FDF9F0);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;padding:3rem;text-align:center;box-shadow:0 12px 40px rgba(34,211,238,.1);position:relative;overflow:hidden;min-height:320px}
+.sede-deco{position:absolute;bottom:.8rem;right:1.2rem;font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;color:rgba(34,211,238,.07);line-height:1;pointer-events:none}
+.sede-icon{font-size:3.2rem}
+.sede-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--bdeep)}
+.sede-sub{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--tmut)}
+.sede-info{display:flex;flex-direction:column;gap:.85rem;margin-top:1.6rem}
+.si-row{display:flex;gap:.75rem;align-items:flex-start}
+.si-ico{color:var(--gold);flex-shrink:0;margin-top:.1rem}
+.si-txt{font-size:.72rem;color:var(--tm);line-height:1.65}
+.si-txt strong{color:var(--td)}
+
+/* ── PATROCINIOS ── */
+#patrocinios{background:var(--w)}
+.pat-section-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--td);margin-bottom:1.2rem}
+.pat-section-title em{color:var(--bdeep);font-style:italic}
+.pat-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2.5rem}
+.pat-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2.5rem}
+.pat-grid-6{display:grid;grid-template-columns:repeat(6,1fr);gap:.9rem;margin-bottom:2rem}
+.pat-card{background:var(--ow);border:1px solid var(--border);padding:1.6rem;transition:border-color .25s}
+.pat-card:hover{border-color:var(--bm)}
+.pat-card.gold-border{border:2px solid var(--gold);position:relative}
+.pat-top-tag{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:.5rem;letter-spacing:.18em;padding:.22rem .8rem;white-space:nowrap}
+.pat-tier{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tmut);margin-bottom:.6rem}
+.pat-price{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--gold);margin-bottom:.4rem;line-height:1}
+.pat-feats{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:.9rem}
+.pat-feats li{font-size:.67rem;color:var(--tm);padding-left:1rem;position:relative}
+.pat-feats li::before{content:'✓';position:absolute;left:0;color:var(--bm)}
+.pat-btn{display:block;padding:.55rem;background:var(--bdeep);color:#fff;text-align:center;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;text-decoration:none;transition:background .2s}
+.pat-btn:hover{background:var(--gold)}
+.pat-item{background:var(--ow);border:1px solid var(--border);padding:1.2rem;text-align:center}
+.pat-item-icon{font-size:1.6rem;margin-bottom:.4rem}
+.pat-item-name{font-size:.68rem;font-weight:600;color:var(--td);margin-bottom:.2rem}
+.pat-item-qty{font-size:.6rem;color:var(--tmut)}
+.contact-box{background:var(--bl);border:1px solid var(--border);padding:1.5rem 2rem;margin-top:1.5rem}
+.contact-box p{font-size:.7rem;color:var(--tm);line-height:1.85}
+.contact-box strong{color:var(--td)}
+
+/* ── MODAL ── */
+.overlay{position:fixed;inset:0;z-index:500;background:rgba(14,116,144,.55);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--w);width:min(560px,94vw);max-height:92vh;overflow-y:auto;box-shadow:0 24px 70px rgba(0,0,0,.16);transform:translateY(28px) scale(.97);transition:transform .3s}
+.overlay.open .modal{transform:translateY(0) scale(1)}
+.modal-hdr{background:var(--bdeep);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.modal-hdr-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:#fff}
+.modal-x{background:none;border:none;color:rgba(255,255,255,.6);font-size:1.3rem;cursor:pointer}
+.modal-x:hover{color:#fff}
+.step-tabs{display:flex;background:var(--ow);border-bottom:1px solid var(--bl)}
+.step-tab{flex:1;padding:.7rem;text-align:center;font-size:.57rem;letter-spacing:.11em;text-transform:uppercase;color:var(--tmut);border-bottom:2px solid transparent;transition:all .25s}
+.step-tab.active{color:var(--bdeep);border-bottom-color:var(--bdeep);font-weight:600}
+.step-tab.done{color:var(--gold);border-bottom-color:var(--gold)}
+.modal-body{padding:1.7rem 2rem}
+.modal-panel{display:none;animation:fadeUp .25s ease}
+.modal-panel.active{display:block}
+.modal-ftr{padding:1rem 2rem;border-top:1px solid var(--bl);display:flex;justify-content:space-between;align-items:center;background:var(--ow)}
+.step-ctr{font-size:.57rem;color:var(--tmut);letter-spacing:.1em}
+.btn-prev{background:none;border:1px solid var(--border);padding:.5rem 1.2rem;color:var(--tm);font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:'Montserrat',sans-serif;transition:border-color .2s}
+.btn-prev:hover{border-color:var(--bm)}
+.btn-next{padding:.6rem 1.7rem;background:var(--bdeep);color:#fff;font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;border:none;font-family:'Montserrat',sans-serif;font-weight:600;transition:background .25s}
+.btn-next:hover{background:var(--gold)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+.frow.full{grid-template-columns:1fr}
+.fg{display:flex;flex-direction:column;gap:.28rem}
+.flbl{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tm);font-weight:600}
+.finput{padding:.62rem .82rem;border:1px solid var(--border);background:var(--w);font-family:'Montserrat',sans-serif;font-size:.74rem;color:var(--td);outline:none;transition:border-color .25s,box-shadow .25s}
+.finput:focus{border-color:var(--bm);box-shadow:0 0 0 3px rgba(34,211,238,.1)}
+.finput.err{border-color:var(--red)}
+.ferr{font-size:.57rem;color:var(--red);display:none}
+.ferr.show{display:block}
+.fsel{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 5 5-5' stroke='%234FB8C0' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .82rem center}
+.plan-opts{display:flex;flex-direction:column;gap:.65rem;margin-bottom:1.3rem}
+.plan-opt{display:flex;align-items:center;gap:1rem;padding:.85rem 1rem;border:1.5px solid var(--border);cursor:pointer;transition:all .22s}
+.plan-opt:hover,.plan-opt.sel{border-color:var(--bdeep);background:rgba(34,211,238,.05)}
+.plan-opt input{accent-color:var(--bdeep)}
+.po-name{font-size:.72rem;font-weight:600;color:var(--td)}
+.po-desc{font-size:.6rem;color:var(--tmut)}
+.po-price{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold);margin-left:auto;flex-shrink:0}
+.consent-row{display:flex;gap:.65rem;align-items:flex-start;margin-bottom:1rem}
+.consent-row input{margin-top:.2rem;accent-color:var(--bdeep);flex-shrink:0}
+.consent-row label{font-size:.64rem;color:var(--tm);line-height:1.5}
+.consent-row a{color:var(--bd)}
+.conf-icon{width:60px;height:60px;border-radius:50%;background:rgba(34,211,238,.1);border:2px solid var(--bm);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+.conf-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--td);text-align:center;margin-bottom:.4rem}
+.conf-sub{font-size:.7rem;color:var(--tmut);text-align:center;line-height:1.7;margin-bottom:1.2rem}
+.conf-table{background:var(--ow);border:1px solid var(--border);padding:.8rem 1rem;margin-bottom:1rem}
+.conf-row{display:flex;justify-content:space-between;padding:.28rem 0;font-size:.69rem;border-bottom:1px solid var(--bl)}
+.conf-row:last-child{border-bottom:none}
+.ck{color:var(--tmut)}
+.cv{color:var(--td);font-weight:600}
+#qr-output{display:flex;justify-content:center;margin:.8rem 0}
+
+/* ── FOOTER ── */
+footer{background:var(--bdeep);color:#fff;position:relative;z-index:1}
+.footer-inner{max-width:var(--max);margin:0 auto;padding:2.5rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;letter-spacing:.1em}
+.footer-logo span{color:var(--gl)}
+.footer-tagline{font-size:.52rem;color:rgba(255,255,255,.35);margin-top:.3rem;letter-spacing:.12em}
+.footer-contact{font-size:.6rem;color:rgba(255,255,255,.45);line-height:1.8;margin-top:.7rem}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);cursor:pointer;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--gl)}
+.footer-copy{font-size:.57rem;color:rgba(255,255,255,.3)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-tag{display:none}
+  .nav-links li:not(:last-child):not(:nth-last-child(2)){display:none}
+  section{padding:3.5rem 1.2rem}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .about-grid,.comite-grid,.sede-wrap{grid-template-columns:1fr}
+  .ponentes-grid{grid-template-columns:repeat(2,1fr)}
+  .reg-grid,.reg-grid-6,.pat-grid-3,.pat-grid-4,.pat-grid-6{grid-template-columns:1fr 1fr}
+  .agenda-row{grid-template-columns:80px 1fr;gap:1rem}
+  .agenda-row .badge{display:none}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:560px){
+  .ponentes-grid,.reg-grid,.reg-grid-6,.pat-grid-3,.pat-grid-4,.pat-grid-6{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .hero-meta{gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <div class="nav-logo">MS<span>C</span></div>
+      <div class="nav-tag">Medical Summit Cozumel<br>02–04 Sep 2026</div>
+    </a>
+    <ul class="nav-links">
+      <li><a onclick="navTo('about')">MSC</a></li>
+      <li><a onclick="navTo('ponentes')">Ponentes</a></li>
+      <li><a onclick="navTo('agenda')">Agenda</a></li>
+      <li><a onclick="navTo('registro')">Registro</a></li>
+      <li><a onclick="navTo('patrocinios')">Patrocinios</a></li>
+      <li><a onclick="navTo('sede')">Sede</a></li>
+      <li><a onclick="openModal()" class="nav-cta">Registrarse</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page">
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-glow1"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-badge"><div class="badge-dot"></div>Congreso Médico Internacional · Septiembre 2026</div>
+  <h1 class="hero-title">Medical Summit<br><em>Cozumel</em></h1>
+  <p class="hero-sub">Innovación · Ciencia · Liderazgo · Quintana Roo, México</p>
+  <div class="hero-line"></div>
+  <div class="hero-meta">
+    <div class="hm"><div class="hm-l">Fecha</div><div class="hm-v">02–04 Sep 2026</div></div>
+    <div class="hm"><div class="hm-l">Sede</div><div class="hm-v">Planetario Cha'an Ka'an</div></div>
+    <div class="hm"><div class="hm-l">Duración</div><div class="hm-v">3 Días</div></div>
+    <div class="hm"><div class="hm-l">Modalidad</div><div class="hm-v">Presencial</div></div>
+  </div>
+  <div class="hero-btns">
+    <button class="btn btn-p" onclick="openModal()">Registrarse ahora</button>
+    <button class="btn btn-o" onclick="navTo('agenda')">Ver programa</button>
+  </div>
+  <div class="hero-wave"><svg viewBox="0 0 1440 55" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:55px;display:block"><path d="M0,28 C360,55 1080,0 1440,28 L1440,55 L0,55 Z" fill="#0E7490"/></svg></div>
+</section>
+
+<!-- STATS -->
+<div id="stats-band">
+  <div class="stats-inner">
+    <div class="sbi"><div class="sbi-num" id="s-reg">0</div><div class="sbi-lbl">Registrados</div></div>
+    <div class="sbi"><div class="sbi-num" id="s-conf">0</div><div class="sbi-lbl">Confirmados</div></div>
+    <div class="sbi"><div class="sbi-num">11</div><div class="sbi-lbl">Ponentes</div></div>
+    <div class="sbi"><div class="sbi-num">3</div><div class="sbi-lbl">Días</div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ¿QUÉ ES MSC? -->
+<section id="about">
+  <div class="container">
+    <p class="sec-label">¿Qué es MSC?</p>
+    <h2 class="sec-title">Medical Summit <em>Cozumel</em></h2>
+    <p class="sec-desc">Evento académico creado por la alianza estratégica entre <strong>Leyla's Smart Health Center</strong>, <strong>IReanimación</strong> y <strong>Care &amp; Zen</strong>. Esta unión integra una vasta experiencia en gestión de salud, práctica clínica y excelencia académica, creando un modelo de networking con impacto positivo en la salud de Cozumel y la península.</p>
+    <div class="about-grid stagger">
+      <div class="about-card"><div class="about-icon">🎯</div><div class="about-card-title">Misión</div><p class="about-card-text">Consolidar un espacio académico y científico de alto nivel que fomente la actualización médica continua y la colaboración interdisciplinaria entre profesionales de la salud.</p></div>
+      <div class="about-card"><div class="about-icon">🔭</div><div class="about-card-title">Visión</div><p class="about-card-text">Ser el congreso médico de referencia, reconocido por su excelencia académica, generando redes de colaboración estratégica entre líderes del sector salud.</p></div>
+      <div class="about-card"><div class="about-icon">⚕️</div><div class="about-card-title">Objetivo</div><p class="about-card-text">Impulsar la transformación de la práctica médica continua mediante un encuentro de alto impacto que combine innovación tecnológica y medicina basada en evidencia.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMITÉ -->
+<section id="comite">
+  <div class="container">
+    <p class="sec-label">Organización</p>
+    <h2 class="sec-title">Comité <em>Organizador</em></h2>
+    <div class="comite-grid stagger">
+      <div class="comite-card">
+        <div class="comite-avatar">WP</div>
+        <div class="comite-name">Dra. Willma Padilla Barbosa</div>
+        <div class="comite-role">Presidenta · Relaciones Institucionales</div>
+        <p class="comite-bio">Especialista en Anestesiología. Presidenta Federación Peninsular COPARMEX. Directora General Leyla's Smart Health Center. Directora de relaciones institucionales del congreso.</p>
+      </div>
+      <div class="comite-card">
+        <div class="comite-avatar">ED</div>
+        <div class="comite-name">Dr. Edgard Díaz Soto</div>
+        <div class="comite-role">Director Académico · Director General</div>
+        <p class="comite-bio">Especialista en Urgencias. Director Académico del Congreso Médico Cozumel 2026. Director General del Instituto de Reanimación (IReanimación).</p>
+      </div>
+      <div class="comite-card">
+        <div class="comite-avatar">TE</div>
+        <div class="comite-name">LAE. Thali Escamilla Lara</div>
+        <div class="comite-role">Coordinadora General · Proyectos Digitales</div>
+        <p class="comite-bio">Directora de proyectos administrativos y digitales. Coordinadora General del Congreso Médico Cozumel 2026. Fundadora de Care &amp; Zen, plataforma promotora de salud Cozumel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PONENTES -->
+<section id="ponentes">
+  <div class="container">
+    <p class="sec-label">Expertos confirmados</p>
+    <h2 class="sec-title">Ponentes <em>2026</em></h2>
+    <div class="ponentes-grid stagger">
+      <div class="ponente-card"><div class="ponente-av">JR</div><div class="ponente-name">Dr. Jorge Rayo Chávez</div><div class="ponente-esp">Cardiología</div><p class="ponente-bio">Cardiólogo-Ecocardiografista. Gen-95 UNAM. Jefatura de Servicio Enfermedades Valvulares, Hosp. Cardiología CMN SXXI.</p></div>
+      <div class="ponente-card"><div class="ponente-av">GL</div><div class="ponente-name">Dr. Gustavo López</div><div class="ponente-esp">Urgencias · Toxicología</div><p class="ponente-bio">Alta especialidad en Toxicología. Presidente de la Sociedad Mexicana de Medicina de Urgencias.</p></div>
+      <div class="ponente-card"><div class="ponente-av">LS</div><div class="ponente-name">Dr. Luis Daniel Sánchez Arreola</div><div class="ponente-esp">Urgencias · Trauma</div><p class="ponente-bio">Jefe de Urgencias Hospital Villa. Director del programa de Reanimación Avanzada en Trauma. Urgencias cardiovasculares SMMU.</p></div>
+      <div class="ponente-card"><div class="ponente-av">AR</div><div class="ponente-name">Dr. Alejandro Rueda Loaiza</div><div class="ponente-esp">Urología</div><p class="ponente-bio">Especialista en Urología desde 2002. Hospital Ángeles del Pedregal.</p></div>
+      <div class="ponente-card"><div class="ponente-av">RT</div><div class="ponente-name">Dr. Rafael Vidal Tamayo</div><div class="ponente-esp">Endocrinología · Medicina Interna</div><p class="ponente-bio">Especialidad INCMNSZ Salvador Zubirán. Práctica privada Hospital Médica Sur.</p></div>
+      <div class="ponente-card"><div class="ponente-av">DM</div><div class="ponente-name">Dánae Alejandra Maya Nájera</div><div class="ponente-esp">Urgencias · Simulación</div><p class="ponente-bio">Maestría en Dirección de Instituciones de Salud. Profesora Simulación Clínica. Hospital General de México.</p></div>
+      <div class="ponente-card"><div class="ponente-av">MA</div><div class="ponente-name">Dra. Mireille Donaji Arango Mathieu</div><div class="ponente-esp">Urgencias · Toxicología</div><p class="ponente-bio">Alta Especialidad en Toxicología. Dirección Médica Medwings World. Líder equipo helicópteros Fórmula 1.</p></div>
+      <div class="ponente-card"><div class="ponente-av">LB</div><div class="ponente-name">Dr. Leonardo Bravo Ruiz</div><div class="ponente-esp">Cirugía · Plástica</div><p class="ponente-bio">Cirugía Plástica, Estética y Reconstructiva. Área quemados Hospital Dr. Rubén Leñero. Tlalpan Team.</p></div>
+      <div class="ponente-card"><div class="ponente-av">JC</div><div class="ponente-name">Dr. Jorge Iván Ceballos Mendoza</div><div class="ponente-esp">Ginecología y Obstetricia</div><p class="ponente-bio">Jefe clínica planificación familiar Hospital Gea González. Maestro en Adm. Pública INAP y Tec de Monterrey.</p></div>
+      <div class="ponente-card"><div class="ponente-av">VP</div><div class="ponente-name">Dr. Victor Hugo Pimentel</div><div class="ponente-esp">Medicina · Simulación</div><p class="ponente-bio">Médico Cirujano y Homeópata. Maestro en Educación. Instructor BLS, ACLS, PHTLS, AMLS. Evaluador COMAEM.</p></div>
+      <div class="ponente-card"><div class="ponente-av">PC</div><div class="ponente-name">Dra. Priscila Cruz</div><div class="ponente-esp">Urgencias · Salud Global</div><p class="ponente-bio">Maestría Johns Hopkins (Salud Global). Diploma Medicina Tropical Lima. Profesora HCA Florida Hospital.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AGENDA -->
+<section id="agenda">
+  <div class="container">
+    <p class="sec-label">Programa académico</p>
+    <h2 class="sec-title">3 días de <em>conocimiento</em></h2>
+    <div class="day-tabs">
+      <button class="day-tab active" id="dt1" onclick="showDay(1)">02 Sep · Talleres</button>
+      <button class="day-tab" id="dt2" onclick="showDay(2)">03 Sep · Urgencias</button>
+      <button class="day-tab" id="dt3" onclick="showDay(3)">04 Sep · Medicina Insular</button>
+    </div>
+
+    <div class="day-panel active" id="dp1">
+      <div class="agenda-row"><div class="ag-time">Taller 1</div><div><div class="ag-title">Reanimación Avanzada en Trauma</div><div class="ag-spk">Sala 3 izquierda y pasillo central · Máx. 24 alumnos</div></div><span class="badge b-taller">Taller · $2,000</span></div>
+      <div class="agenda-row"><div class="ag-time">Taller 2</div><div><div class="ag-title">Toxicología Clínica</div><div class="ag-spk">Auditorio principal · Máx. 24 alumnos</div></div><span class="badge b-taller">Taller · $2,000</span></div>
+      <div class="agenda-row"><div class="ag-time">Taller 3</div><div><div class="ag-title">Ultrasonido en el Sitio de Atención (POCUS)</div><div class="ag-spk">Sala 3 derecha · Máx. 24 alumnos</div></div><span class="badge b-taller">Taller · $2,000</span></div>
+      <div class="agenda-row"><div class="ag-time">Info</div><div><div class="ag-title">Capacidad total: 72 alumnos con pre-inscripción</div><div class="ag-spk">Cupo limitado · Se asigna por orden de confirmación</div></div><span class="badge b-mesa">General</span></div>
+    </div>
+
+    <div class="day-panel" id="dp2">
+      <div class="agenda-row"><div class="ag-time">Tema 1</div><div><div class="ag-title">Muerte Súbita y Cardioprotección</div><div class="ag-spk">Dr. Jorge Rayo Chávez · Cardiólogo-Ecocardiografista CMN SXXI</div></div><span class="badge b-conf">Urgencias</span></div>
+      <div class="agenda-row"><div class="ag-time">Tema 2</div><div><div class="ag-title">Urgencias Ginecológicas</div><div class="ag-spk">Dr. Jorge Iván Ceballos · Hospital General Manuel Gea González</div></div><span class="badge b-conf">Urgencias</span></div>
+      <div class="agenda-row"><div class="ag-time">Tema 3</div><div><div class="ag-title">Cólico Renal · Urgencias Metabólicas</div><div class="ag-spk">Dr. Rafael Vidal Tamayo · Hospital Médica Sur</div></div><span class="badge b-conf">Urgencias</span></div>
+      <div class="agenda-row"><div class="ag-time">Tema 4</div><div><div class="ag-title">Dolor Torácico · Toxíndromes</div><div class="ag-spk">Dr. Gustavo López · Presidente SMMU</div></div><span class="badge b-conf">Urgencias</span></div>
+      <div class="agenda-row"><div class="ag-time">Tema 5</div><div><div class="ag-title">Evaluación y Manejo de Trauma · Quemaduras</div><div class="ag-spk">Dr. Luis Daniel Sánchez Arreola · Dir. Reanimación Avanzada en Trauma</div></div><span class="badge b-conf">Traumatología</span></div>
+      <div class="agenda-row"><div class="ag-time">Tema 6</div><div><div class="ag-title">Triage y Víctimas Múltiples</div><div class="ag-spk">Dánae Alejandra Maya Nájera · Hospital General de México</div></div><span class="badge b-conf">Urgencias</span></div>
+      <div class="agenda-row"><div class="ag-time">Tema 7</div><div><div class="ag-title">Cómo Preparar un Paciente para Traslado</div><div class="ag-spk">Dra. Mireille Donaji Arango · Medwings World / Helicópteros F1</div></div><span class="badge b-conf">Urgencias</span></div>
+      <div class="agenda-row"><div class="ag-time">Info</div><div><div class="ag-title">Capacidad: 200 alumnos · Planetario Cha'an Ka'an</div><div class="ag-spk">Cozumel, Quintana Roo</div></div><span class="badge b-mesa">General</span></div>
+    </div>
+
+    <div class="day-panel" id="dp3">
+      <div class="agenda-row"><div class="ag-time">07:00</div><div><div class="ag-title">Carrera 5K MSC</div><div class="ag-spk">Salida: Planetario Cha'an Ka'an · 150 participantes</div></div><span class="badge b-dep">Deportivo</span></div>
+      <div class="agenda-row"><div class="ag-time">Tema 1</div><div><div class="ag-title">Trauma por Buceo y Accidentes Marinos</div><div class="ag-spk">Dr. Leonardo Bravo Ruiz · Hospital Dr. Rubén Leñero</div></div><span class="badge b-conf">Medicina Insular</span></div>
+      <div class="agenda-row"><div class="ag-time">Tema 2</div><div><div class="ag-title">Urgencias Tropicales</div><div class="ag-spk">Dra. Priscila Cruz · Johns Hopkins / HCA Florida Hospital</div></div><span class="badge b-conf">Medicina Insular</span></div>
+      <div class="agenda-row"><div class="ag-time">Tema 3</div><div><div class="ag-title">Medicina a Bordo de Crucero</div><div class="ag-spk">Dr. Alejandro Rueda Loaiza · Hospital Ángeles del Pedregal</div></div><span class="badge b-conf">Turismo Médico</span></div>
+      <div class="agenda-row"><div class="ag-time">Mesa</div><div><div class="ag-title">Mesa Redonda: Turismo Médico y Académico</div><div class="ag-spk">Panel de expertos · Planetario Cha'an Ka'an</div></div><span class="badge b-mesa">Mesa Redonda</span></div>
+      <div class="agenda-row"><div class="ag-time">Info</div><div><div class="ag-title">Capacidad: 200 alumnos · Planetario Cha'an Ka'an</div><div class="ag-spk">Cozumel, Quintana Roo</div></div><span class="badge b-mesa">General</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- REGISTRO -->
+<section id="registro">
+  <div class="container">
+    <p class="sec-label">Inscripciones abiertas</p>
+    <h2 class="sec-title">Registro al <em>congreso</em></h2>
+    <div class="reg-grid-6 stagger">
+      <div class="plan-card"><div class="plan-name">Estudiante</div><div class="plan-price"><sup>$</sup>750</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Material digital</li><li>Constancia</li></ul><button class="plan-btn" onclick="openModal('estudiante')">Registrarse</button></div>
+      <div class="plan-card"><div class="plan-name">Paramédico</div><div class="plan-price"><sup>$</sup>900</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Material digital</li><li>Constancia</li></ul><button class="plan-btn" onclick="openModal('paramedico')">Registrarse</button></div>
+      <div class="plan-card"><div class="plan-name">Enfermería</div><div class="plan-price"><sup>$</sup>1,200</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Material digital</li><li>Constancia</li></ul><button class="plan-btn" onclick="openModal('enfermeria')">Registrarse</button></div>
+      <div class="plan-card"><div class="plan-name">Residente</div><div class="plan-price"><sup>$</sup>1,400</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Acceso completo</li><li>Material digital</li><li>Constancia oficial</li></ul><button class="plan-btn" onclick="openModal('residente')">Registrarse</button></div>
+      <div class="plan-card featured"><div class="plan-featured-tag">RECOMENDADO</div><div class="plan-name">Médico</div><div class="plan-price"><sup>$</sup>1,900</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Acceso completo 3 días</li><li>Brindis de bienvenida</li><li>Memorias digitales</li><li>Constancia curricular</li></ul><button class="plan-btn" onclick="openModal('medico')">Registrarse</button></div>
+      <div class="plan-card"><div class="plan-name">Taller</div><div class="plan-price"><sup>$</sup>2,000</div><div class="plan-period">MXN · por taller</div><ul class="plan-feats"><li>POCUS / Trauma / Toxicología</li><li>Máx. 24 alumnos</li><li>Pre-inscripción requerida</li></ul><button class="plan-btn" onclick="openModal('taller')">Registrarse</button></div>
+    </div>
+
+    <div style="margin-top:1rem">
+      <h3 class="hosp-title">Paquetes con <em>hospedaje incluido</em></h3>
+      <div class="reg-grid stagger">
+        <div class="plan-card"><div class="plan-name">General</div><div class="plan-price"><sup>$</sup>8,000</div><div class="plan-period">MXN · 3 noches</div><ul class="plan-feats"><li>Hotel Plaza Cozumel ⭐⭐⭐</li><li>Desayuno incluido</li><li>Acceso al congreso</li><li>Brindis de bienvenida</li><li>Acompañante: $2,500</li><li>Noche adicional: $1,800</li></ul><button class="plan-btn" onclick="openModal('general')">Reservar</button></div>
+        <div class="plan-card featured"><div class="plan-featured-tag">MÁS POPULAR</div><div class="plan-name">VIP</div><div class="plan-price"><sup>$</sup>9,000</div><div class="plan-period">MXN · 3 noches</div><ul class="plan-feats"><li>Hotel Casa Mexicana ⭐⭐⭐⭐</li><li>Desayuno incluido</li><li>Acceso al congreso</li><li>Brindis de bienvenida</li><li>Acompañante: $3,000</li><li>Noche adicional: $2,000</li></ul><button class="plan-btn" onclick="openModal('vip')">Reservar</button></div>
+        <div class="plan-card"><div class="plan-name">Elite</div><div class="plan-price"><sup>$</sup>15,000</div><div class="plan-period">MXN · 3 noches</div><ul class="plan-feats"><li>Hotel Puerto Libre Boutique</li><li>Acceso al congreso + Brindis</li><li>Visita al Cielo (catamarán)</li><li>Acompañante: $5,000</li><li>Noche adicional: $3,000</li></ul><button class="plan-btn" onclick="openModal('elite')">Reservar</button></div>
+      </div>
+      <p style="font-size:.65rem;color:var(--tmut);text-align:center;margin-top:.8rem">* Visita al Cielo en catamarán para acompañantes adicionales: $1,500 por persona</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SEDE -->
+<section id="sede">
+  <div class="container">
+    <div class="sede-wrap">
+      <div class="sede-box" style="padding:0;overflow:hidden;background:#0d2535;position:relative">
+        <img
+          src="https://itin-dev.wanderlogstatic.com/freeImage/u4vk0tKk61yked5E7YZgzBL3SGO4gCY0"
+          alt="Planetario Cha'an Ka'an Cozumel"
+          style="width:100%;height:100%;object-fit:cover;min-height:340px;display:block;filter:brightness(.88)"
+          onerror="this.onerror=null;this.parentNode.style.background='linear-gradient(135deg,#0E7490,#164E63)';this.style.display='none'"
+        />
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,37,53,.88));padding:1.4rem 1.8rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#fff;font-weight:300;letter-spacing:.05em">Planetario Cha'an Ka'an</div>
+          <div style="font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:.3rem">📍 Cozumel, Quintana Roo · Sede MSC 2026</div>
+        </div>
+      </div>
+      <div>
+        <p class="sec-label" style="text-align:left">Sede oficial</p>
+        <h2 class="sec-title" style="text-align:left;margin-bottom:1rem">Planetario <em>Cha'an Ka'an</em></h2>
+        <div class="sede-info">
+          <div class="si-row"><div class="si-ico">◈</div><div class="si-txt"><strong>Planetario de Cozumel Cha'an Ka'an</strong><br>Cozumel, Quintana Roo, México</div></div>
+          <div class="si-row"><div class="si-ico">◈</div><div class="si-txt">Auditorio principal + salas de taller<br>Capacidad: 200 asistentes por sesión</div></div>
+          <div class="si-row"><div class="si-ico">◈</div><div class="si-txt">Vuelos directos desde CDMX, GDL, MTY y CUN<br>Ferri desde Playa del Carmen (45 min)</div></div>
+          <div class="si-row"><div class="si-ico">◈</div><div class="si-txt">Hoteles con tarifas especiales para asistentes<br>Desde Hotel Plaza Cozumel hasta Hotel Puerto Libre Boutique</div></div>
+          <div class="si-row"><div class="si-ico">◈</div><div class="si-txt"><strong>Contacto y pagos:</strong> IReanimación · +52 55 4927 0288<br>ireanimacion.admon@gmail.com · Gabriela Hernández</div></div>
+        </div>
+        <div style="margin-top:1.8rem;display:flex;gap:.8rem;flex-wrap:wrap">
+          <button class="btn btn-p" onclick="openModal()">Asegurar mi lugar</button>
+          <a href="mailto:ireanimacion.admon@gmail.com" class="btn btn-o">Contactar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PATROCINIOS -->
+<section id="patrocinios">
+  <div class="container">
+    <p class="sec-label">Únete como aliado</p>
+    <h2 class="sec-title">Patrocinios <em>estratégicos</em></h2>
+    <p class="sec-desc">El Comité Organizador invita a instituciones líderes a sumarse como aliados estratégicos en una plataforma que fusiona el prestigio académico con el turismo de alta gama en el Caribe.</p>
+
+    <h3 class="pat-section-title">Patrocinio <em>Comercial</em> · Stand 9 m²</h3>
+    <div class="pat-grid-3 stagger">
+      <div class="pat-card gold-border"><div class="pat-top-tag">MÁXIMA VISIBILIDAD</div><div class="pat-tier" style="margin-top:.5rem">🥇 Platino</div><ul class="pat-feats"><li>Stand 9 m²</li><li>Presencia de marca en programa</li><li>Publicaciones digitales</li><li>Mención en recesos</li><li>Video publicitario en receso</li><li>Exclusividad de producto/segmento</li></ul><a href="mailto:ireanimacion.admon@gmail.com" class="pat-btn">Solicitar información</a></div>
+      <div class="pat-card"><div class="pat-tier">🥈 Oro</div><ul class="pat-feats"><li>Stand 9 m²</li><li>Presencia de marca en programa</li><li>Publicaciones digitales</li></ul><a href="mailto:ireanimacion.admon@gmail.com" class="pat-btn">Solicitar información</a></div>
+      <div class="pat-card"><div class="pat-tier">🥉 Plata</div><ul class="pat-feats"><li>Stand 9 m²</li><li>Presencia de marca en programa</li></ul><p style="font-size:.64rem;color:var(--tmut);margin:.8rem 0"><strong style="color:var(--td)">$15,000 MXN</strong> · Medidas 3×3 m</p><a href="mailto:ireanimacion.admon@gmail.com" class="pat-btn">Solicitar información</a></div>
+    </div>
+
+    <h3 class="pat-section-title">Patrocinio <em>Presencia Digital</em></h3>
+    <div class="pat-grid-4 stagger">
+      <div class="pat-card"><div class="pat-tier">Básico</div><div class="pat-price">$15,000</div><p style="font-size:.66rem;color:var(--tm);line-height:1.6;margin-bottom:.8rem">Mención en redes sociales + Logo en landing con link a su web.</p><a href="mailto:care.zen.czm@gmail.com" class="pat-btn">Contactar</a></div>
+      <div class="pat-card"><div class="pat-tier">Interactivo</div><div class="pat-price">$20,000</div><p style="font-size:.66rem;color:var(--tm);line-height:1.6;margin-bottom:.8rem">Todo lo básico + 4 historias interactivas + Banner publicitario.</p><a href="mailto:care.zen.czm@gmail.com" class="pat-btn">Contactar</a></div>
+      <div class="pat-card" style="border:2px solid var(--bm)"><div class="pat-tier">Inmersión</div><div class="pat-price">$25,000</div><p style="font-size:.66rem;color:var(--tm);line-height:1.6;margin-bottom:.8rem">Todo lo anterior + Video 30 seg + Posts destacados.</p><a href="mailto:care.zen.czm@gmail.com" class="pat-btn">Contactar</a></div>
+      <div class="pat-card" style="background:var(--bdeep);border-color:var(--bdeep)"><div class="pat-tier" style="color:var(--gl)">Elite</div><div class="pat-price" style="color:var(--gl)">$30,000</div><p style="font-size:.66rem;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:.8rem">Impacto total + links directos a asistentes + mención especial.</p><a href="mailto:care.zen.czm@gmail.com" class="pat-btn" style="border:1px solid var(--gl);color:var(--gl);background:transparent" onmouseover="this.style.background='#C9A84C';this.style.color='#1A3A4A'" onmouseout="this.style.background='transparent';this.style.color='#E5C97A'">Contactar</a></div>
+    </div>
+
+    <h3 class="pat-section-title">Patrocinio de <em>Artículos</em></h3>
+    <div class="pat-grid-6 stagger">
+      <div class="pat-item"><div class="pat-item-icon">☕</div><div class="pat-item-name">Coffee Break</div><div class="pat-item-qty">300 por día</div></div>
+      <div class="pat-item"><div class="pat-item-icon">👜</div><div class="pat-item-name">Bolsas Kit</div><div class="pat-item-qty">350 unidades</div></div>
+      <div class="pat-item"><div class="pat-item-icon">🏃</div><div class="pat-item-name">Carrera 5K</div><div class="pat-item-qty">150 participantes</div></div>
+      <div class="pat-item"><div class="pat-item-icon">📓</div><div class="pat-item-name">Libretas y Lapiceros</div><div class="pat-item-qty">350 kits</div></div>
+      <div class="pat-item"><div class="pat-item-icon">👕</div><div class="pat-item-name">Playeras y Gorras</div><div class="pat-item-qty">150 de c/u</div></div>
+      <div class="pat-item"><div class="pat-item-icon">🪧</div><div class="pat-item-name">Banner</div><div class="pat-item-qty">Zona exposición</div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Medical Summit <span>Cozumel</span></div>
+      <div class="footer-tagline">INNOVACIÓN · CIENCIA · LIDERAZGO · 02–04 SEP 2026</div>
+    </div>
+    <div class="footer-links">
+      <a onclick="navTo('about')">MSC</a>
+      <a onclick="navTo('ponentes')">Ponentes</a>
+      <a onclick="navTo('agenda')">Agenda</a>
+      <a onclick="navTo('registro')">Registro</a>
+      <a onclick="navTo('patrocinios')">Patrocinios</a>
+      <a onclick="navTo('sede')">Sede</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:.45rem">
+      <div style="font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gl);margin-bottom:.2rem">Contacto</div>
+      <a href="tel:+525549270288" style="font-size:.62rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#E5C97A'" onmouseout="this.style.color='rgba(255,255,255,.55)'">📞 IReanimación · +52 55 4927 0288</a>
+      <a href="mailto:ireanimacion.admon@gmail.com" style="font-size:.62rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#E5C97A'" onmouseout="this.style.color='rgba(255,255,255,.55)'">✉ ireanimacion.admon@gmail.com</a>
+      <a href="tel:+529871120060" style="font-size:.62rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#E5C97A'" onmouseout="this.style.color='rgba(255,255,255,.55)'">📞 Care &amp; Zen · 987 112 0060</a>
+      <a href="tel:+529871418629" style="font-size:.62rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#E5C97A'" onmouseout="this.style.color='rgba(255,255,255,.55)'">📞 Leyla's Smart Health · 987 141 8629</a>
+    </div>
+    <div class="footer-copy">© 2026 Medical Summit Cozumel<br>Leyla's Smart Health · IReanimación · Care &amp; Zen</div>
+  </div>
+</footer>
+
+</div><!-- /page -->
+
+<!-- MODAL -->
+<div class="overlay" id="regOverlay">
+  <div class="modal">
+    <div class="modal-hdr">
+      <div class="modal-hdr-title">Registro de Asistente</div>
+      <button class="modal-x" onclick="closeModal()">✕</button>
+    </div>
+    <div class="step-tabs">
+      <div class="step-tab active" id="st1">1 · Datos</div>
+      <div class="step-tab" id="st2">2 · Plan</div>
+      <div class="step-tab" id="st3">3 · Confirmación</div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-panel active" id="mp1">
+        <div class="frow"><div class="fg"><label class="flbl">Nombre *</label><input class="finput" id="f-nom" placeholder="Dr. Juan"/><span class="ferr" id="e-nom">Requerido</span></div><div class="fg"><label class="flbl">Apellido *</label><input class="finput" id="f-ape" placeholder="García"/><span class="ferr" id="e-ape">Requerido</span></div></div>
+        <div class="frow full"><div class="fg"><label class="flbl">Correo electrónico *</label><input class="finput" id="f-mail" type="email" placeholder="correo@hospital.com"/><span class="ferr" id="e-mail">Email inválido</span></div></div>
+        <div class="frow"><div class="fg"><label class="flbl">Teléfono *</label><input class="finput" id="f-tel" placeholder="+52 999 000 0000"/><span class="ferr" id="e-tel">Requerido</span></div><div class="fg"><label class="flbl">Tipo *</label><select class="finput fsel" id="f-tipo" onchange="preselectFromTipo()"><option value="">Selecciona...</option><option value="estudiante">Estudiante</option><option value="residente">Residente</option><option value="medico">Médico</option><option value="enfermeria">Enfermería</option><option value="paramedico">Paramédico</option><option value="taller">Solo Taller</option></select><span class="ferr" id="e-tipo">Requerido</span></div></div>
+        <div class="frow"><div class="fg"><label class="flbl">Especialidad</label><input class="finput" id="f-esp" placeholder="Cardiología..."/></div><div class="fg"><label class="flbl">Institución</label><input class="finput" id="f-inst" placeholder="IMSS, privado..."/></div></div>
+        <div class="consent-row"><input type="checkbox" id="f-consent"/><label for="f-consent">Acepto el <a href="#">aviso de privacidad</a> y consiento el tratamiento de mis datos personales conforme a la LFPDPPP.</label></div>
+        <span class="ferr" id="e-consent">Debes aceptar el aviso de privacidad</span>
+      </div>
+      <div class="modal-panel" id="mp2">
+        <p style="font-size:.7rem;color:var(--tmut);margin-bottom:1.1rem;line-height:1.7">Selecciona tu modalidad de registro. Precios en pesos mexicanos.</p>
+        <div class="plan-opts">
+          <label class="plan-opt" data-plan="estudiante"><input type="radio" name="planr" value="estudiante"/><div><div class="po-name">Estudiante</div><div class="po-desc">Conferencias · Constancia · Material digital</div></div><div class="po-price">$750</div></label>
+          <label class="plan-opt" data-plan="paramedico"><input type="radio" name="planr" value="paramedico"/><div><div class="po-name">Paramédico</div><div class="po-desc">Conferencias · Constancia</div></div><div class="po-price">$900</div></label>
+          <label class="plan-opt" data-plan="enfermeria"><input type="radio" name="planr" value="enfermeria"/><div><div class="po-name">Enfermería</div><div class="po-desc">Conferencias · Constancia</div></div><div class="po-price">$1,200</div></label>
+          <label class="plan-opt" data-plan="residente"><input type="radio" name="planr" value="residente"/><div><div class="po-name">Residente</div><div class="po-desc">Acceso completo · Constancia oficial</div></div><div class="po-price">$1,400</div></label>
+          <label class="plan-opt" data-plan="medico"><input type="radio" name="planr" value="medico"/><div><div class="po-name">Médico</div><div class="po-desc">Acceso completo 3 días · Brindis · Memorias</div></div><div class="po-price">$1,900</div></label>
+          <label class="plan-opt" data-plan="taller"><input type="radio" name="planr" value="taller"/><div><div class="po-name">Taller (POCUS / Trauma / Toxicología)</div><div class="po-desc">Máx. 24 alumnos · Pre-inscripción requerida</div></div><div class="po-price">$2,000</div></label>
+        </div>
+        <p style="font-size:.62rem;color:var(--tmut);line-height:1.6">💳 En producción el pago se procesa vía Stripe o MercadoPago. Recibirás tu ticket PDF con QR único al confirmar.</p>
+      </div>
+      <div class="modal-panel" id="mp3">
+        <div class="conf-icon">✓</div>
+        <div class="conf-title">¡Registro completado!</div>
+        <div class="conf-sub">Tu registro fue guardado. Guarda tu código QR de acceso.</div>
+        <div class="conf-table">
+          <div class="conf-row"><span class="ck">Folio</span><span class="cv" id="c-folio">—</span></div>
+          <div class="conf-row"><span class="ck">Nombre</span><span class="cv" id="c-nom">—</span></div>
+          <div class="conf-row"><span class="ck">Correo</span><span class="cv" id="c-mail">—</span></div>
+          <div class="conf-row"><span class="ck">Plan</span><span class="cv" id="c-plan">—</span></div>
+          <div class="conf-row"><span class="ck">Estatus</span><span class="cv" style="color:var(--gold)">Pendiente de pago</span></div>
+        </div>
+        <div id="qr-output"></div>
+        <p style="font-size:.63rem;color:var(--tmut);text-align:center;line-height:1.6;margin-top:.7rem">Presenta este QR en la entrada. En producción se enviará automáticamente a tu correo.</p>
+      </div>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn-prev" id="btnPrev" style="visibility:hidden" onclick="modalPrev()">← Anterior</button>
+      <span class="step-ctr" id="stepCtr">Paso 1 de 3</span>
+      <button class="btn-next" id="btnNext" onclick="modalNext()">Siguiente →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── SCROLL REVEAL ──
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger').forEach(el => {
+  revealObs.observe(el);
+});
+
+function navTo(id){ const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth'}); }
+
+// ── NAV SCROLL ──
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.boxShadow = window.scrollY>60 ? '0 4px 24px rgba(34,211,238,.14)' : '0 2px 16px rgba(34,211,238,.07)';
+});
+
+// ── LIVE STATS ──
+let DB = [];
+function updateStats(){
+  const conf = DB.filter(a=>a.estatus==='pagado'||a.estatus==='asistio').length;
+  animNum('s-reg', DB.length);
+  animNum('s-conf', conf);
+}
+function animNum(id, target){
+  const el=document.getElementById(id); if(!el) return;
+  const cur=parseInt(el.textContent)||0; if(cur===target) return;
+  let s=null;
+  const step=ts=>{if(!s)s=ts;const p=Math.min((ts-s)/800,1);el.textContent=Math.floor(p*target+(1-p)*cur);if(p<1)requestAnimationFrame(step);else el.textContent=target;};
+  requestAnimationFrame(step);
+}
+
+// ── DAY TABS ──
+function showDay(n){
+  [1,2,3].forEach(i=>{
+    document.getElementById('dt'+i).classList.toggle('active', i===n);
+    document.getElementById('dp'+i).classList.toggle('active', i===n);
+  });
+}
+
+// ── MODAL ──
+let modalStep=1, selectedPlan='';
+
+function openModal(plan){
+  modalStep=1; selectedPlan=plan||'';
+  document.getElementById('qr-output').innerHTML='';
+  ['f-nom','f-ape','f-mail','f-tel','f-esp','f-inst'].forEach(id=>{ const el=document.getElementById(id); if(el){el.value='';el.classList.remove('err');} });
+  document.getElementById('f-tipo').value='';
+  document.getElementById('f-consent').checked=false;
+  document.querySelectorAll('.ferr').forEach(e=>e.classList.remove('show'));
+  document.querySelectorAll('.plan-opt').forEach(o=>o.classList.remove('sel'));
+  if(plan) preselectPlan(plan);
+  updateModalStep();
+  document.getElementById('regOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){ document.getElementById('regOverlay').classList.remove('open'); document.body.style.overflow=''; }
+document.getElementById('regOverlay').addEventListener('click',function(e){ if(e.target===this) closeModal(); });
+
+function preselectPlan(plan){
+  document.querySelectorAll('.plan-opt').forEach(o=>{
+    const match=o.dataset.plan===plan;
+    o.classList.toggle('sel',match);
+    if(match){ o.querySelector('input').checked=true; selectedPlan=plan; }
+  });
+}
+function preselectFromTipo(){ const v=document.getElementById('f-tipo').value; if(v) preselectPlan(v); }
+document.querySelectorAll('.plan-opt').forEach(o=>{
+  o.addEventListener('click',()=>{
+    document.querySelectorAll('.plan-opt').forEach(x=>x.classList.remove('sel'));
+    o.classList.add('sel'); selectedPlan=o.dataset.plan; o.querySelector('input').checked=true;
+  });
+});
+
+function updateModalStep(){
+  [1,2,3].forEach(i=>{
+    document.getElementById('mp'+i).classList.toggle('active',i===modalStep);
+    const t=document.getElementById('st'+i);
+    t.classList.remove('active','done');
+    if(i===modalStep) t.classList.add('active');
+    else if(i<modalStep) t.classList.add('done');
+  });
+  document.getElementById('btnPrev').style.visibility=modalStep>1?'visible':'hidden';
+  const nb=document.getElementById('btnNext');
+  nb.textContent=modalStep===2?'Confirmar registro →':modalStep===3?'Cerrar':'Siguiente →';
+  document.getElementById('stepCtr').textContent='Paso '+modalStep+' de 3';
+}
+
+function validateStep1(){
+  let ok=true;
+  [{id:'f-nom',eid:'e-nom',fn:v=>v.trim().length>1},{id:'f-ape',eid:'e-ape',fn:v=>v.trim().length>1},{id:'f-mail',eid:'e-mail',fn:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)},{id:'f-tel',eid:'e-tel',fn:v=>v.trim().length>6},{id:'f-tipo',eid:'e-tipo',fn:v=>v!==''}].forEach(c=>{
+    const el=document.getElementById(c.id); const valid=c.fn(el.value);
+    el.classList.toggle('err',!valid); document.getElementById(c.eid).classList.toggle('show',!valid);
+    if(!valid) ok=false;
+  });
+  const con=document.getElementById('f-consent'); const ce=document.getElementById('e-consent');
+  if(!con.checked){ce.classList.add('show');ok=false;}else ce.classList.remove('show');
+  return ok;
+}
+
+const PLAN_PRICES={estudiante:'$750 MXN',paramedico:'$900 MXN',enfermeria:'$1,200 MXN',residente:'$1,400 MXN',medico:'$1,900 MXN',taller:'$2,000 MXN',general:'$8,000 MXN',vip:'$9,000 MXN',elite:'$15,000 MXN'};
+const PLAN_NAMES={estudiante:'Estudiante',paramedico:'Paramédico',enfermeria:'Enfermería',residente:'Residente',medico:'Médico',taller:'Taller',general:'Paquete General',vip:'Paquete VIP',elite:'Paquete Elite'};
+
+function saveRegistro(){
+  const folio='MSC-2026-'+String(DB.length+1).padStart(5,'0');
+  const nombre=document.getElementById('f-nom').value.trim()+' '+document.getElementById('f-ape').value.trim();
+  const reg={folio,nombre,email:document.getElementById('f-mail').value,telefono:document.getElementById('f-tel').value,tipo:document.getElementById('f-tipo').value,especialidad:document.getElementById('f-esp').value,institucion:document.getElementById('f-inst').value,plan:selectedPlan,estatus:'registrado',fecha:new Date().toISOString().split('T')[0]};
+  DB.push(reg);
+  document.getElementById('c-folio').textContent=folio;
+  document.getElementById('c-nom').textContent=nombre;
+  document.getElementById('c-mail').textContent=reg.email;
+  document.getElementById('c-plan').textContent=(PLAN_NAMES[selectedPlan]||'—')+' · '+(PLAN_PRICES[selectedPlan]||'');
+  document.getElementById('qr-output').innerHTML='';
+  const qd=document.createElement('div');
+  qd.style.cssText='padding:8px;background:#fff;display:inline-block;border:1px solid #E0F9FB';
+  document.getElementById('qr-output').appendChild(qd);
+  new QRCode(qd,{text:folio,width:150,height:150,colorDark:'#0E7490',colorLight:'#ffffff'});
+  updateStats();
+}
+
+function modalNext(){
+  if(modalStep===1){ if(!validateStep1()) return; const t=document.getElementById('f-tipo').value; if(t&&!selectedPlan) preselectPlan(t); modalStep=2; }
+  else if(modalStep===2){ if(!selectedPlan){alert('Por favor selecciona un plan.');return;} saveRegistro(); modalStep=3; }
+  else { closeModal(); modalStep=1; return; }
+  updateModalStep();
+}
+function modalPrev(){ if(modalStep>1){modalStep--;updateModalStep();} }
+
+// ── INIT ──
+updateStats();
+</script>
+</body>
+</html>
