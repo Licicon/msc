@@ -119,12 +119,13 @@ section{padding:5rem 2rem;position:relative;z-index:1}
 .stagger.visible > *:nth-child(9){transition-delay:.61s}
 .stagger.visible > *:nth-child(10){transition-delay:.68s}
 .stagger.visible > *:nth-child(11){transition-delay:.75s}
+.stagger.visible > *:nth-child(12){transition-delay:.82s}
 
 /* card hover lifts */
 .comite-card{transition:box-shadow .3s,transform .3s}
 .comite-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(34,211,238,.16)}
-.ponente-card{transition:box-shadow .3s,border-color .3s,transform .3s}
-.ponente-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(34,211,238,.14)}
+.ponente-card{transition:box-shadow .3s,border-color .3s}
+@media(hover:hover){.ponente-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(34,211,238,.14)}}
 .plan-card{transition:box-shadow .3s,border-color .3s,transform .3s}
 .plan-card:hover{transform:translateY(-5px)}
 .about-card{transition:background .3s,transform .3s,box-shadow .3s}
@@ -201,7 +202,7 @@ section{padding:5rem 2rem;position:relative;z-index:1}
 #ponentes{background:var(--w)}
 .ponentes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
 .ponente-card{background:var(--ow);border:1px solid var(--border);padding:1.5rem;transition:box-shadow .3s,border-color .3s}
-.ponente-card:hover{box-shadow:0 6px 22px rgba(34,211,238,.12);border-color:var(--bm)}
+@media(hover:hover){.ponente-card:hover{box-shadow:0 6px 22px rgba(34,211,238,.12);border-color:var(--bm)}}
 .ponente-av{display:none}
 .ponente-photo{width:80px;height:80px;border-radius:50%;overflow:hidden;background:var(--bl);margin-bottom:.85rem;border:2px solid var(--bm)}
 .ponente-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .3s ease}
@@ -1041,7 +1042,7 @@ footer{background:var(--bdeep);color:#fff;position:relative;z-index:1}
 // ── SCROLL REVEAL ──
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if(e.isIntersecting) e.target.classList.add('visible');
+    if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target);}
   });
 }, { threshold: 0.1 });
 
