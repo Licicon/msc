@@ -126,8 +126,6 @@ section{padding:5rem 2rem;position:relative;z-index:1}
 .comite-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(34,211,238,.16)}
 .ponente-card{transition:box-shadow .3s,border-color .3s}
 @media(hover:hover){.ponente-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(34,211,238,.14)}}
-@keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.ponente-card{animation:cardIn .5s ease both}
 .plan-card{transition:box-shadow .3s,border-color .3s,transform .3s}
 .plan-card:hover{transform:translateY(-5px)}
 .about-card{transition:background .3s,transform .3s,box-shadow .3s}
@@ -202,7 +200,6 @@ section{padding:5rem 2rem;position:relative;z-index:1}
 
 /* ── PONENTES ── */
 #ponentes{background:var(--w)}
-#ponentes .ponente-card{opacity:1!important;transform:none!important}
 .ponentes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
 .ponente-card{background:var(--ow);border:1px solid var(--border);padding:1.5rem;transition:box-shadow .3s,border-color .3s}
 @media(hover:hover){.ponente-card:hover{box-shadow:0 6px 22px rgba(34,211,238,.12);border-color:var(--bm)}}
@@ -564,7 +561,7 @@ footer{background:var(--bdeep);color:#fff;position:relative;z-index:1}
     <p class="sec-label">¿Qué es MSC?</p>
     <h2 class="sec-title">Medical Summit <em>Cozumel</em></h2>
     <p class="sec-desc">Evento académico creado por la alianza estratégica entre <strong>Leyla's Smart Health Center</strong>, <strong>IReanimación</strong> y <strong>Care &amp; Zen</strong>. Esta unión integra una vasta experiencia en gestión de salud, práctica clínica y excelencia académica, creando un modelo de networking con impacto positivo en la salud de Cozumel y la península.</p>
-    <div class="about-grid stagger">
+    <div class="about-grid">
       <div class="about-card"><div class="about-icon">🎯</div><div class="about-card-title">Misión</div><p class="about-card-text">Consolidar un espacio académico y científico de alto nivel que fomente la actualización médica continua y la colaboración interdisciplinaria entre profesionales de la salud.</p></div>
       <div class="about-card"><div class="about-icon">🔭</div><div class="about-card-title">Visión</div><p class="about-card-text">Ser el congreso médico de referencia, reconocido por su excelencia académica, generando redes de colaboración estratégica entre líderes del sector salud.</p></div>
       <div class="about-card"><div class="about-icon">⚕️</div><div class="about-card-title">Objetivo</div><p class="about-card-text">Impulsar la transformación de la práctica médica continua mediante un encuentro de alto impacto que combine innovación tecnológica y medicina basada en evidencia.</p></div>
@@ -579,7 +576,7 @@ footer{background:var(--bdeep);color:#fff;position:relative;z-index:1}
   <div class="container">
     <p class="sec-label">Organización</p>
     <h2 class="sec-title">Comité <em>Organizador</em></h2>
-    <div class="comite-grid stagger">
+    <div class="comite-grid">
       <div class="comite-card">
         <div class="comite-avatar">WP</div>
         <div class="comite-name">Dra. Willma Padilla Barbosa</div>
@@ -655,7 +652,7 @@ footer{background:var(--bdeep);color:#fff;position:relative;z-index:1}
   <div class="container">
     <p class="sec-label">Inscripciones abiertas</p>
     <h2 class="sec-title">Registro al <em>congreso</em></h2>
-    <div class="reg-grid-6 stagger">
+    <div class="reg-grid-6">
       <div class="plan-card"><div class="plan-name">Estudiante</div><div class="plan-price"><sup>$</sup>750</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Material digital</li><li>Constancia</li></ul><button class="plan-btn" onclick="openModal('estudiante')"><span>Registrarse</span></button></div>
       <div class="plan-card"><div class="plan-name">Paramédico</div><div class="plan-price"><sup>$</sup>900</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Material digital</li><li>Constancia</li></ul><button class="plan-btn" onclick="openModal('paramedico')"><span>Registrarse</span></button></div>
       <div class="plan-card"><div class="plan-name">Enfermería</div><div class="plan-price"><sup>$</sup>1,200</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Material digital</li><li>Constancia</li></ul><button class="plan-btn" onclick="openModal('enfermeria')"><span>Registrarse</span></button></div>
@@ -666,7 +663,7 @@ footer{background:var(--bdeep);color:#fff;position:relative;z-index:1}
 
     <div style="margin-top:1rem">
       <h3 class="hosp-title">Paquetes con <em>hospedaje incluido</em></h3>
-      <div class="reg-grid stagger">
+      <div class="reg-grid">
         <div class="plan-card"><div class="plan-name">General</div><div class="plan-price"><sup>$</sup>8,000</div><div class="plan-period">MXN · 3 noches</div><ul class="plan-feats"><li>Hotel Plaza Cozumel ⭐⭐⭐</li><li>Desayuno incluido</li><li>Acceso al congreso</li><li>Brindis de bienvenida</li><li>Acompañante: $2,500</li><li>Noche adicional: $1,800</li></ul><button class="plan-btn" onclick="openModal('general')"><span>Reservar</span></button></div>
         <div class="plan-card featured"><div class="plan-featured-tag">MÁS POPULAR</div><div class="plan-name">VIP</div><div class="plan-price"><sup>$</sup>9,000</div><div class="plan-period">MXN · 3 noches</div><ul class="plan-feats"><li>Hotel Casa Mexicana ⭐⭐⭐⭐</li><li>Desayuno incluido</li><li>Acceso al congreso</li><li>Brindis de bienvenida</li><li>Acompañante: $3,000</li><li>Noche adicional: $2,000</li></ul><button class="plan-btn" onclick="openModal('vip')"><span>Reservar</span></button></div>
         <div class="plan-card"><div class="plan-name">Elite</div><div class="plan-price"><sup>$</sup>15,000</div><div class="plan-period">MXN · 3 noches</div><ul class="plan-feats"><li>Hotel Puerto Libre Boutique</li><li>Acceso al congreso + Brindis</li><li>Visita al Cielo (catamarán)</li><li>Acompañante: $5,000</li><li>Noche adicional: $3,000</li></ul><button class="plan-btn" onclick="openModal('elite')"><span>Reservar</span></button></div>
