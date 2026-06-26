@@ -58,6 +58,7 @@ section{padding:5rem 2rem;position:relative;z-index:1}
 .container{max-width:var(--max);margin:0 auto}
 .sec-label{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;text-align:center}
 
+.sec-label{font-size:.72rem;letter-spacing:.22em}
 .sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.2vw,2.9rem);font-weight:300;color:var(--td);line-height:1.2;text-align:center;margin-bottom:2.5rem}
 
 .sec-desc{font-size:.78rem;color:var(--tm);line-height:1.85;text-align:center;max-width:650px;margin:0 auto 2.5rem}
@@ -508,6 +509,22 @@ footer{background:var(--bdeep);color:#fff;position:relative;z-index:1}
 .social-float a svg{width:18px;height:18px;fill:var(--bdeep);transition:fill .3s}
 .social-float a:hover svg{fill:#fff}
 @media(max-width:700px){.social-float{right:8px;top:auto;bottom:90px;transform:none}}
+
+/* ── SPONSORS ── */
+#aliados{background:var(--ow);padding:4rem 0}
+.aliados-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem}
+.aliado-card{position:relative;background:var(--td);border:1px solid rgba(255,255,255,.1);padding:2rem 1.5rem;display:flex;align-items:center;justify-content:center;min-height:110px;cursor:default;transition:border-color .3s,box-shadow .3s;overflow:hidden}
+.aliado-card:hover{border-color:var(--gold);box-shadow:0 6px 20px rgba(212,175,55,.15)}
+.aliado-placeholder{display:flex;flex-direction:column;align-items:center;gap:.6rem;opacity:.45}
+.aliado-placeholder svg{width:36px;height:36px;stroke:rgba(255,255,255,.6)}
+.aliado-placeholder span{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);font-family:'Montserrat',sans-serif}
+.aliado-tooltip{position:absolute;inset:0;background:rgba(212,175,55,.95);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s;pointer-events:none}
+.aliado-card:hover .aliado-tooltip{opacity:1;transform:translateY(0)}
+.aliado-tooltip-name{font-family:'Cormorant Garamond',serif;font-size:1rem;color:#1A3A4A;font-weight:600;margin-bottom:.3rem;text-align:center}
+.aliado-tooltip-desc{font-size:.58rem;color:rgba(26,58,74,.8);text-align:center;letter-spacing:.05em;line-height:1.6}
+.aliado-nivel{font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:#1A3A4A;margin-bottom:.4rem}
+@media(max-width:700px){.aliados-grid{grid-template-columns:repeat(2,1fr)}
+.aliado-card:active .aliado-tooltip{opacity:1;transform:translateY(0)}}
 </style>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -648,9 +665,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="sec-title">Medical Summit <em>Cozumel</em></h2>
     <p class="sec-desc">Evento académico creado por la alianza estratégica entre:<br><br><strong>Leyla's Smart Health Center</strong><br><strong>IReanimación</strong><br><strong>Care &amp; Zen</strong><br><br>Esta unión integra una vasta experiencia en gestión de salud, práctica clínica y excelencia académica, creando un modelo de networking con impacto positivo en la salud.</p>
     <div class="about-grid">
-      <div class="about-card"><div class="about-icon">🎯</div><div class="about-card-title">Misión</div><p class="about-card-text">Consolidar un espacio académico y científico de alto nivel que fomente la actualización médica continua y la colaboración interdisciplinaria entre profesionales de la salud.</p></div>
-      <div class="about-card"><div class="about-icon">🔭</div><div class="about-card-title">Visión</div><p class="about-card-text">Ser el congreso médico de referencia, reconocido por su excelencia académica, generando redes de colaboración estratégica entre líderes del sector salud.</p></div>
-      <div class="about-card"><div class="about-icon">⚕️</div><div class="about-card-title">Objetivo</div><p class="about-card-text">Impulsar la transformación de la práctica médica continua mediante un encuentro de alto impacto que combine innovación tecnológica y medicina basada en evidencia.</p></div>
+      <div class="about-card"><div class="about-card-title">Misión</div><p class="about-card-text">Consolidar un espacio académico y científico de alto nivel que fomente la actualización médica continua y la colaboración interdisciplinaria entre profesionales de la salud.</p></div>
+      <div class="about-card"><div class="about-card-title">Visión</div><p class="about-card-text">Ser el congreso médico de referencia, reconocido por su excelencia académica, generando redes de colaboración estratégica entre líderes del sector salud.</p></div>
+      <div class="about-card"><div class="about-card-title">Objetivo</div><p class="about-card-text">Impulsar la transformación de la práctica médica continua mediante un encuentro de alto impacto que combine innovación tecnológica y medicina basada en evidencia.</p></div>
     </div>
   </div>
 </section>
@@ -667,21 +684,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="comite-avatar" style="width:80px;height:80px;padding:0;background:none;border:2px solid var(--bm);overflow:hidden"><img src="dra-willma-padilla-barbosa-2.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center" alt="Dra. Willma Padilla Barbosa"/></div>
         <div class="comite-name">Dra. Willma Padilla Barbosa</div>
         <div class="comite-role">Directora de Relaciones</div>
-        <p class="comite-bio">Especialista en Anestesiología.<br>Presidenta Federación Peninsular COPARMEX.<br>Directora General Leyla's Smart Health Center.<br>Directora de relaciones institucionales del congreso.</p>
+        <p class="comite-bio">Médico Cirujano.<br>Especialista en Anestesiología.<br>Maestría en Administración en Comercialización Estratégica.<br>Maestría en Derecho Empresarial Corporativo.<br>Directora General de Leyla's Smart Health Center.<br>Directora de Relaciones Institucionales del Medical Summit Cozumel.</p>
         <div style="margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--border)"><img src="logo-leyla-s-smart-health-center-3.webp" style="height:32px;width:auto;object-fit:contain;opacity:.85" alt="Logo Leyla's Smart Health Center"/></div>
       </div>
       <div class="comite-card">
         <div class="comite-avatar" style="background:none;border:2px solid var(--bm);overflow:hidden;padding:0"><img src="dr-edgar-diaz-soto-4.webp" alt="Dr. Edgar Díaz Soto" style="width:100%;height:100%;object-fit:cover;object-position:top center"/></div>
         <div class="comite-name">Dr. Edgard Díaz Soto</div>
         <div class="comite-role">Director General del Medical Summit Cozumel</div>
-        <p class="comite-bio">Especialista en Urgencias.<br>Director Académico del Congreso Médico Cozumel 2026.<br>Director General del Instituto de Reanimación (IReanimación).</p>
+        <p class="comite-bio">Médico Cirujano.<br>Especialista en Medicina de Urgencias.<br>Alta Especialidad en Medicina de Reanimación.<br>Maestría en Ciencias de la Administración.<br>Director General del Instituto de Reanimación (IReanimación).<br>Director General del Medical Summit Cozumel.</p>
         <div style="margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--border)"><img src="logo-instituto-de-reanimacion-ireanimacion-5.webp" style="height:55px;width:auto;object-fit:contain;opacity:.85" alt="Logo Instituto de Reanimación iReanimación"/></div>
       </div>
       <div class="comite-card">
         <div class="comite-avatar" style="width:80px;height:80px;padding:0;background:none;border:2px solid var(--bm);overflow:hidden"><img src="lae-thali-escamilla-lara-6.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center" alt="LAE. Thali Escamilla Lara"/></div>
         <div class="comite-name">LAE. Thali Escamilla Lara</div>
         <div class="comite-role">Coordinadora General</div>
-        <p class="comite-bio">Directora de proyectos administrativos y digitales.<br>Coordinadora General del Congreso Médico Cozumel 2026.<br>Fundadora de Care &amp; Zen, plataforma promotora de salud Cozumel.</p>
+        <p class="comite-bio">Directora de proyectos administrativos y digitales.<br>Coordinadora General del Medical Summit Cozumel.<br>Fundadora de Care &amp; Zen, plataforma promotora de salud Cozumel.</p>
         <div style="margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--border)"><img src="logo-care-zen-7.webp" style="height:32px;width:auto;object-fit:contain;opacity:.85" alt="Logo Care & Zen"/></div>
       </div>
     </div>
@@ -693,20 +710,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- PONENTES -->
 <section id="ponentes">
   <div class="container">
-    <p class="sec-label">Expertos confirmados</p>
+    <p class="sec-label" style="font-size:.8rem;letter-spacing:.25em">Expertos confirmados</p>
     <h2 class="sec-title">Ponentes <em>2026</em></h2>
     <div class="ponentes-grid">
-      <div class="ponente-card"><div class="ponente-photo"><img src="dr-jorge-rayo-chavez-8.webp" alt="Dr. Jorge Rayo Chávez" loading="lazy"/></div><div class="ponente-name">Dr. Jorge Rayo Chávez</div><div class="ponente-esp">Cardiología</div><p class="ponente-bio">Cardiólogo-Ecocardiografista. Jefatura de Servicio Enfermedades Valvulares, Hosp. Cardiología CMN SXXI.</p></div>
-      <div class="ponente-card"><div class="ponente-photo"><img src="dr-gustavo-lopez-9.webp" alt="Dr. Gustavo López" loading="lazy"/></div><div class="ponente-name">Dr. Gustavo López</div><div class="ponente-esp">Urgencias · Toxicología</div><p class="ponente-bio">Alta especialidad en Toxicología. Presidente de la Sociedad Mexicana de Medicina de Urgencias.</p></div>
-      <div class="ponente-card"><div class="ponente-photo"><img src="dr-luis-daniel-sanchez-arreola-10.webp" alt="Dr. Luis Daniel Sánchez Arreola" loading="lazy"/></div><div class="ponente-name">Dr. Luis Daniel Sánchez Arreola</div><div class="ponente-esp">Urgencias · Trauma</div><p class="ponente-bio">Jefe de Urgencias Hospital Villa. Director del programa de Reanimación Avanzada en Trauma. Urgencias cardiovasculares SMMU.</p></div>
-      <div class="ponente-card"><div class="ponente-photo"><img src="dr-alejandro-rueda-loaiza-11.webp" alt="Dr. Alejandro Rueda Loaiza" loading="lazy"/></div><div class="ponente-name">Dr. Alejandro Rueda Loaiza</div><div class="ponente-esp">Urología</div><p class="ponente-bio">Especialista en Urología desde 2002. Hospital Ángeles del Pedregal.</p></div>
-      <div class="ponente-card"><div class="ponente-photo"><img src="dr-rafael-vidal-tamayo-12.webp" alt="Dr. Rafael Vidal Tamayo" loading="lazy"/></div><div class="ponente-name">Dr. Rafael Vidal Tamayo</div><div class="ponente-esp">Endocrinología · Medicina Interna</div><p class="ponente-bio">Especialidad INCMNSZ Salvador Zubirán. Práctica privada Hospital Médica Sur.</p></div>
-      <div class="ponente-card"><div class="ponente-photo"><img src="dra-danae-alejandra-maya-najera-13.webp" alt="Dra. Dánae Alejandra Maya Nájera" loading="lazy"/></div><div class="ponente-name">Dra. Dánae Alejandra Maya Nájera</div><div class="ponente-esp">Urgencias · Simulación</div><p class="ponente-bio">Maestría en Dirección de Instituciones de Salud. Profesora Simulación Clínica. Hospital General de México.</p></div>
-      <div class="ponente-card"><div class="ponente-photo"><img src="dra-mireille-donaji-arango-mathieu-14.webp" alt="Dra. Mireille Donaji Arango Mathieu" loading="lazy"/></div><div class="ponente-name">Dra. Mireille Donaji Arango Mathieu</div><div class="ponente-esp">Urgencias · Toxicología</div><p class="ponente-bio">Alta Especialidad en Toxicología. Dirección Médica Medwings World. Líder equipo helicópteros Fórmula 1.</p></div>
-      <div class="ponente-card"><div class="ponente-photo"><img src="dr-leonardo-bravo-ruiz-15.webp" alt="Dr. Leonardo Bravo Ruiz" loading="lazy"/></div><div class="ponente-name">Dr. Leonardo Bravo Ruiz</div><div class="ponente-esp">Cirugía · Plástica</div><p class="ponente-bio">Cirugía Plástica, Estética y Reconstructiva. Área quemados Hospital Dr. Rubén Leñero. Tlalpan Team.</p></div>
-      <div class="ponente-card"><div class="ponente-photo"><img src="dr-jorge-ivan-ceballos-mendoza-16.webp" alt="Dr. Jorge Iván Ceballos Mendoza" loading="lazy"/></div><div class="ponente-name">Dr. Jorge Iván Ceballos Mendoza</div><div class="ponente-esp">Ginecología y Obstetricia</div><p class="ponente-bio">Jefe clínica planificación familiar Hospital Gea González. Maestro en Adm. Pública INAP y Tec de Monterrey.</p></div>
-      <div class="ponente-card"><div class="ponente-photo"><img src="dr-victor-hugo-pimentel-17.webp" alt="Dr. Victor Hugo Pimentel" loading="lazy"/></div><div class="ponente-name">Dr. Victor Hugo Pimentel</div><div class="ponente-esp">Medicina · Simulación</div><p class="ponente-bio">Médico Cirujano y Homeópata. Maestro en Educación. Instructor BLS, ACLS, PHTLS, AMLS. Evaluador COMAEM.</p></div>
-      <div class="ponente-card"><div class="ponente-photo"><img src="dra-priscila-cruz-18.webp" alt="Dra. Priscila Cruz" loading="lazy"/></div><div class="ponente-name">Dra. Priscila Cruz</div><div class="ponente-esp">Urgencias · Salud Global</div><p class="ponente-bio">Maestría Johns Hopkins (Salud Global). Diploma Medicina Tropical Lima. Profesora HCA Florida Hospital.</p></div><div class="ponente-card"><div class="ponente-photo"><img src="dra-claudia-calderon-rocher-19.webp" alt="Dra. Claudia Calderon Rocher" loading="lazy"/></div><div class="ponente-name">Dra. Claudia Calderon Rocher</div><div class="ponente-esp">Dermatología · Cirugía Oncológica Cutánea</div><p class="ponente-bio">Especialista en Dermatología. Cirugía oncológica cutánea. Profesora de Dermatología UADY. Certificada por el Consejo Mexicano de Dermatología.</p></div><div class="ponente-card"><div class="ponente-photo"><img src="dr-salvador-velazquez-rios-20.webp" alt="Dr. Salvador Velázquez Ríos" loading="lazy"/></div><div class="ponente-name">Dr. Salvador Velázquez Ríos</div><div class="ponente-esp">Medicina · Cruceros</div><p class="ponente-bio">Médico Cirujano Universidad Anáhuac. Lead Doctor MSC Cruises 2023–2025. Doctor Virgin Voyages 2020–2022. Doctor Royal Caribbean 2025–actual.</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dr-jorge-rayo-chavez-8.webp" alt="Dr. Jorge Rayo Chávez" loading="lazy"/></div><div class="ponente-name">Dr. Jorge Rayo Chávez</div><div class="ponente-esp">Cardiología · Ecocardiografía</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Cardiología.<br>Alta especialidad en Ecocardiografía.<br>Jefe del servicio de enfermedades valvulares, Hospital de Cardiología CMN Siglo XXI.</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dr-gustavo-lopez-9.webp" alt="Dr. Gustavo López" loading="lazy"/></div><div class="ponente-name">Dr. Gustavo López</div><div class="ponente-esp">Urgencias · Toxicología</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Medicina de Urgencias.<br>Alta especialidad en Toxicología.<br>Presidente de la Sociedad Mexicana de Medicina de Emergencias (SMME).</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dr-luis-daniel-sanchez-arreola-10.webp" alt="Dr. Luis Daniel Sánchez Arreola" loading="lazy"/></div><div class="ponente-name">Dr. Luis Daniel Sánchez Arreola</div><div class="ponente-esp">Urgencias · Trauma</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Medicina de Urgencias.<br>Maestría en Administración.<br>Director del Programa de Reanimación Avanzada en Trauma (RAT).<br>Jefe del servicio de urgencias, Hospital General La Villa.</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dr-alejandro-rueda-loaiza-11.webp" alt="Dr. Alejandro Rueda Loaiza" loading="lazy"/></div><div class="ponente-name">Dr. Alejandro Rueda Loaiza</div><div class="ponente-esp">Urología</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Urología.<br>Fellow en Hospital General Universitario Gregorio Marañón, Madrid.<br>Investigador avalado por Cofepris y FDA.<br>Miembro de la Confederación Americana y Asociación Europea de Urología.<br>Práctica privada Hospital Ángeles.</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dr-rafael-vidal-tamayo-12.webp" alt="Dr. Rafael Vidal Tamayo" loading="lazy"/></div><div class="ponente-name">Dr. Rafael Vidal Tamayo</div><div class="ponente-esp">Endocrinología · Medicina Interna</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Medicina Interna y Endocrinología.<br>Práctica clínica en el Hospital Médica Sur.</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dra-danae-alejandra-maya-najera-13.webp" alt="Dra. Dánae Alejandra Maya Nájera" loading="lazy"/></div><div class="ponente-name">Dra. Dánae Alejandra Maya Nájera</div><div class="ponente-esp">Urgencias · Simulación</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Medicina de Urgencias.<br>Maestría en Dirección y Gestión de Instituciones de Salud.<br>Profesora de Simulación Clínica.<br>Buzo certificada por PADI en aguas abiertas y avanzado.</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dra-mireille-donaji-arango-mathieu-14.webp" alt="Dra. Mireille Donaji Arango Mathieu" loading="lazy"/></div><div class="ponente-name">Dra. Mireille Donaji Arango Mathieu</div><div class="ponente-esp">Urgencias · Toxicología</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Medicina de Urgencias.<br>Alta Especialidad en Toxicología.<br>Médico de vuelo, Dirección Médica Medwings World.<br>Líder de equipo en helicóptero para Fórmula 1.</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dr-leonardo-bravo-ruiz-15.webp" alt="Dr. Leonardo Bravo Ruiz" loading="lazy"/></div><div class="ponente-name">Dr. Leonardo Bravo Ruiz</div><div class="ponente-esp">Cirugía Plástica · Reconstructiva</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Cirugía General y Cirugía Plástica y Reconstructiva.<br>Alta Especialidad en Microcirugía y Cirugía de Mano.<br>Médico adscrito al servicio de quemados, Hospital Rubén Leñero.<br>Miembro del Tlalpan Team, 3 trasplantes de miembro superior en América Latina.</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dr-jorge-ivan-ceballos-mendoza-16.webp" alt="Dr. Jorge Iván Ceballos Mendoza" loading="lazy"/></div><div class="ponente-name">Dr. Jorge Iván Ceballos Mendoza</div><div class="ponente-esp">Ginecología y Obstetricia</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Ginecología y Obstetricia.<br>Maestría en Administración y Dirección de Empresas.<br>Miembro del Colegio y Federación Mexicana de Ginecología y Obstetricia.<br>Jefe de la Clínica de Planificación Familiar, Hospital Gea González, CDMX.</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dr-victor-hugo-pimentel-17.webp" alt="Dr. Victor Hugo Pimentel" loading="lazy"/></div><div class="ponente-name">Dr. Victor Hugo Pimentel</div><div class="ponente-esp">Medicina · Simulación</div><p class="ponente-bio">Médico Cirujano.<br>Maestría en Educación.<br>Instructor BLS/ACLS (AHA), PHTLS y AMLS (NAEMT).<br>Profesor de Simulación Clínica.<br>Evaluador por el Consejo Mexicano para la Acreditación de la Educación Médica (COMAEM).</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dra-priscila-cruz-18.webp" alt="Dra. Priscila Cruz" loading="lazy"/></div><div class="ponente-name">Dra. Priscila Cruz</div><div class="ponente-esp">Urgencias · Salud Global</div><p class="ponente-bio">Médico (Puerto Rico).<br>Especialista en Medicina de Urgencias (EUA).<br>Diploma en Medicina Tropical (Lima, Perú).<br>Maestría en Planificación y Gestión de Salud Global, Universidad de Johns Hopkins.<br>Directora del programa de residencia en urgencias, HCA Florida.</p></div><div class="ponente-card"><div class="ponente-photo"><img src="dra-claudia-calderon-rocher-19.webp" alt="Dra. Claudia Calderon Rocher" loading="lazy"/></div><div class="ponente-name">Dra. Claudia Calderon Rocher</div><div class="ponente-esp">Dermatología · Cirugía Oncológica Cutánea</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Dermatología.<br>Alta Especialidad en Cirugía Oncológica Cutánea.<br>Profesora de la especialidad en Dermatología, Universidad Autónoma de Yucatán.</p></div><div class="ponente-card"><div class="ponente-photo"><img src="dr-salvador-velazquez-rios-20.webp" alt="Dr. Salvador Velázquez Ríos" loading="lazy"/></div><div class="ponente-name">Dr. Salvador Velázquez Ríos</div><div class="ponente-esp">Medicina · Cruceros</div><p class="ponente-bio">Médico Cirujano.<br>Mediterranean Shipping Company (MSC).<br>Lead Doctor en MSC Cruises.<br>Doctor en Virgin Voyages.<br>Doctor en Royal Caribbean.</p></div>
     </div>
   </div>
 </section>
@@ -724,9 +741,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <button class="day-tab" onclick="showDay(3)">Día 3 · 04 Sep · Cierre</button>
     </div>
     <div class="day-panel active" id="dp1">
-      <div class="agenda-row"><div class="ag-time">Taller 1</div><div><div class="ag-title">Reanimación Avanzada en Trauma</div><div class="ag-spk">Sala 3 izquierda y pasillo central · Máx. 24 alumnos</div></div><span class="badge b-taller">Taller · $2,000</span></div>
-      <div class="agenda-row"><div class="ag-time">Taller 2</div><div><div class="ag-title">Toxicología Clínica</div><div class="ag-spk">Auditorio principal · Máx. 24 alumnos</div></div><span class="badge b-taller">Taller · $2,000</span></div>
-      <div class="agenda-row"><div class="ag-time">Taller 3</div><div><div class="ag-title">Ultrasonido en el Sitio de Atención (POCUS)</div><div class="ag-spk">Sala 3 derecha · Máx. 24 alumnos</div></div><span class="badge b-taller">Taller · $2,000</span></div>
+      <div class="agenda-row"><div class="ag-time">Taller 1</div><div><div class="ag-title">Reanimación Avanzada en Trauma</div><div class="ag-spk">Sala 3 izquierda y pasillo central · Máx. 24 alumnos</div></div><span class="badge b-taller">Taller</span></div>
+      <div class="agenda-row"><div class="ag-time">Taller 2</div><div><div class="ag-title">Toxicología Clínica</div><div class="ag-spk">Auditorio principal · Máx. 24 alumnos</div></div><span class="badge b-taller">Taller</span></div>
+      <div class="agenda-row"><div class="ag-time">Taller 3</div><div><div class="ag-title">Ultrasonido en el Sitio de Atención (POCUS)</div><div class="ag-spk">Sala 3 derecha · Máx. 24 alumnos</div></div><span class="badge b-taller">Taller</span></div>
       <div class="agenda-row"><div class="ag-time">Info</div><div><div class="ag-title">Del 02 al 04 de Septiembre · Capacidad limitada</div><div class="ag-spk">Cupo limitado · Se asigna por orden de confirmación</div></div><span class="badge b-mesa">General</span></div>
     </div>
 
@@ -757,25 +774,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- REGISTRO -->
 <section id="registro">
   <div class="container">
-    <p class="sec-label">Inscripciones abiertas</p>
+    <p class="sec-label" style="font-size:.8rem;letter-spacing:.25em">Inscripciones abiertas</p>
     <h2 class="sec-title">Registro al <em>congreso</em></h2>
     <div class="reg-grid-6">
-      <div class="plan-card"><div class="plan-name">Estudiante</div><div class="plan-price"><sup>$</sup>750</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Material digital</li><li>Constancia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20registrarme%20al%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Registrarse</span></button></div>
-      <div class="plan-card"><div class="plan-name">Paramédico</div><div class="plan-price"><sup>$</sup>900</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Material digital</li><li>Constancia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20registrarme%20al%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Registrarse</span></button></div>
-      <div class="plan-card"><div class="plan-name">Enfermería</div><div class="plan-price"><sup>$</sup>1,200</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Material digital</li><li>Constancia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20registrarme%20al%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Registrarse</span></button></div>
-      <div class="plan-card"><div class="plan-name">Residente</div><div class="plan-price"><sup>$</sup>1,400</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Acceso completo días 2 y 3</li><li>Material digital</li><li>Constancia oficial</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20registrarme%20al%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Registrarse</span></button></div>
-      <div class="plan-card featured"><div class="plan-featured-tag">RECOMENDADO</div><div class="plan-name">Médico</div><div class="plan-price"><sup>$</sup>1,900</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Acceso completo días 2 y 3</li><li>Brindis de bienvenida</li><li>Memorias digitales</li><li>Constancia curricular</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20registrarme%20al%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Registrarse</span></button></div>
-      <div class="plan-card"><div class="plan-name">Taller</div><div class="plan-price"><sup>$</sup>2,000</div><div class="plan-period">MXN · por taller</div><ul class="plan-feats"><li>POCUS / Trauma / Toxicología</li><li>Máx. 24 alumnos</li><li>Pre-inscripción requerida</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20registrarme%20al%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Registrarse</span></button></div>
+      <div class="plan-card"><div class="plan-name">Virtual</div><div class="plan-price"><sup>$</sup>750</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Transmisión en vivo</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Estudiante</div><div class="plan-price"><sup>$</sup>750</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Paramédico</div><div class="plan-price"><sup>$</sup>900</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Enfermería</div><div class="plan-price"><sup>$</sup>1,200</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Residente</div><div class="plan-price"><sup>$</sup>1,400</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Acceso completo días 2 y 3</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card featured"><div class="plan-featured-tag">RECOMENDADO</div><div class="plan-name">Médico</div><div class="plan-price"><sup>$</sup>1,900</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Acceso completo días 2 y 3</li><li>Brindis de bienvenida</li><li>Memorias digitales</li><li>Constancia curricular</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Taller</div><div class="plan-price"><sup>$</sup>2,000</div><div class="plan-period">MXN · por taller</div><ul class="plan-feats"><li>POCUS / Trauma / Toxicología</li><li>Máx. 24 alumnos</li><li>Pre-inscripción requerida</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div>
     </div>
-
-    <div style="margin-top:1rem">
-      <h3 class="hosp-title">Paquetes con <em>hospedaje incluido</em></h3>
-      <div class="reg-grid">
-        <div class="plan-card"><div class="plan-name">General</div><div class="plan-price"><sup>$</sup>8,000</div><div class="plan-period">MXN · 3 noches</div><ul class="plan-feats"><li>Hotel Casa Colonial</li><li>Desayuno incluido</li><li>Acceso al congreso</li><li>Brindis de bienvenida</li><li>Acompañante: $2,500</li><li>Noche adicional: $1,800</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20registrarme%20al%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Reservar</span></button></div>
-        <div class="plan-card featured"><div class="plan-featured-tag">MÁS POPULAR</div><div class="plan-name">VIP</div><div class="plan-price"><sup>$</sup>9,000</div><div class="plan-period">MXN · 3 noches</div><ul class="plan-feats"><li>Hotel Casa Mexicana ⭐⭐⭐⭐</li><li>Desayuno incluido</li><li>Acceso al congreso</li><li>Brindis de bienvenida</li><li>Acompañante: $3,000</li><li>Noche adicional: $2,000</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20registrarme%20al%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Reservar</span></button></div>
-        <div class="plan-card"><div class="plan-name">Elite</div><div class="plan-price"><sup>$</sup>15,000</div><div class="plan-period">MXN · 3 noches</div><ul class="plan-feats"><li>Hotel Puerto Libre Boutique</li><li>Acceso al congreso + Brindis</li><li>Visita al Cielo (catamarán)</li><li>Acompañante: $5,000</li><li>Noche adicional: $3,000</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20registrarme%20al%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Reservar</span></button></div>
-      </div>
-      <p style="font-size:.65rem;color:var(--tmut);text-align:center;margin-top:.8rem">* Visita al Cielo en catamarán para acompañantes adicionales: $1,500 por persona</p>
+    <div style="margin-top:2.5rem;text-align:center;padding:1.5rem 1rem;border-top:1px solid var(--border)">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--td);font-weight:300;letter-spacing:.04em;margin-bottom:1rem">
+        ¿Requieres hospedaje? Solicita información sobre disponibilidad y opciones.
+      </p>
+      <a href="https://wa.me/525549270288?text=Hola,%20me%20interesa%20informaci%C3%B3n%20sobre%20hospedaje%20para%20el%20Medical%20Summit%20Cozumel%202026." target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid var(--bdeep);color:var(--bdeep);font-family:'Montserrat',sans-serif;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;padding:.75rem 2rem;text-decoration:none;transition:all .3s"
+         onmouseover="this.style.background='var(--bdeep)';this.style.color='#fff'"
+         onmouseout="this.style.background='transparent';this.style.color='var(--bdeep)'">
+        Solicitar información de hospedaje
+      </a>
     </div>
   </div>
 </section>
@@ -795,18 +808,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         />
         <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,37,53,.88));padding:1.4rem 1.8rem">
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#fff;font-weight:300;letter-spacing:.05em">Planetario Cha'an Ka'an</div>
-          <div style="font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:.3rem">📍 Cozumel, Quintana Roo · Sede MSC 2026</div>
+          <div style="font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:.3rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Cozumel, Quintana Roo · Sede MSC 2026</div>
         </div>
       </div>
       <div>
         <p class="sec-label" style="text-align:left">Sede oficial</p>
         <h2 class="sec-title" style="text-align:left;margin-bottom:1rem">Planetario <em>Cha'an Ka'an</em></h2>
         <div class="sede-info">
-          <div class="si-row"><div class="si-ico">◈</div><div class="si-txt"><strong>Planetario de Cozumel Cha'an Ka'an</strong><br>Cozumel, Quintana Roo, México</div></div>
-          <div class="si-row"><div class="si-ico">◈</div><div class="si-txt">Auditorio principal + salas de taller<br>Capacidad: 200 asistentes por sesión</div></div>
-          <div class="si-row"><div class="si-ico">◈</div><div class="si-txt">Vuelos directos desde CDMX, GDL, MTY y CUN<br>Ferri desde Playa del Carmen (45 min)</div></div>
-          <div class="si-row"><div class="si-ico">◈</div><div class="si-txt">Hoteles con tarifas especiales para asistentes<br>Desde Hotel Plaza Cozumel hasta Hotel Puerto Libre Boutique</div></div>
-          <div class="si-row"><div class="si-ico">◈</div><div class="si-txt"><strong>Contacto y pagos:</strong> IReanimación · +52 55 4927 0288<br>contacto@reanimacion.lat · Gabriela Hernández</div></div>
+          <div class="si-row"><div class="si-ico">›</div><div class="si-txt"><strong>Planetario de Cozumel Cha'an Ka'an</strong><br>Cozumel, Quintana Roo, México</div></div>
+          <div class="si-row"><div class="si-ico">›</div><div class="si-txt">Auditorio principal + salas de taller<br>Capacidad: 200 asistentes por sesión</div></div>
+          <div class="si-row"><div class="si-ico">›</div><div class="si-txt">Vuelos directos desde CDMX, GDL, MTY y CUN<br>Ferri desde Playa del Carmen (45 min)</div></div>
+          <div class="si-row"><div class="si-ico">›</div><div class="si-txt">Hoteles con tarifas especiales para asistentes<br>Desde Hotel Plaza Cozumel hasta Hotel Puerto Libre Boutique</div></div>
+          <div class="si-row"><div class="si-ico">›</div><div class="si-txt"><strong>Contacto y pagos:</strong> IReanimación · +52 55 4927 0288<br>contacto@reanimacion.lat · Gabriela Hernández</div></div>
         </div>
         <div style="margin-top:1.8rem;display:flex;gap:.8rem;flex-wrap:wrap">
           <button class="btn btn-p" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20registrarme%20al%20Medical%20Summit%20Cozumel%202026.','_blank')">Asegurar mi lugar</button>
@@ -828,27 +841,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <h3 class="pat-section-title">Patrocinio <em>Comercial</em> · Stand 9 m²</h3>
     <div class="art-summary-card" onclick="openStand()">
-      <div class="art-icons">🥇 &nbsp;🥈 &nbsp;🥉</div>
+      
       <div class="art-summary-text">
         <div class="art-summary-title">3 niveles de Stand disponibles · Espacio físico 9 m²</div>
-        <div class="art-summary-sub">Platino · Oro · Plata &nbsp;—&nbsp; Desde $15,000 MXN</div>
+        <div class="art-summary-sub">Platino · Oro · Plata</div>
       </div>
       <div class="art-summary-btn">Ver niveles →</div>
     </div>
 
     <h3 class="pat-section-title">Patrocinio <em>Presencia Digital</em></h3>
     <div class="art-summary-card" onclick="openDigital()">
-      <div class="art-icons">📱 &nbsp;📲 &nbsp;🚀</div>
+      
       <div class="art-summary-text">
         <div class="art-summary-title">4 paquetes de presencia digital</div>
-        <div class="art-summary-sub">Básico · Interactivo · Inmersión · Elite &nbsp;—&nbsp; $15,000 – $30,000 MXN</div>
+        <div class="art-summary-sub">Básico · Interactivo · Inmersión · Elite</div>
       </div>
       <div class="art-summary-btn">Ver paquetes →</div>
     </div>
 
     <h3 class="pat-section-title">Patrocinio de <em>Artículos</em></h3>
     <div class="art-summary-card" onclick="openArticulos()">
-      <div class="art-icons">☕ &nbsp;👜 &nbsp;🏃 &nbsp;📓 &nbsp;👕 &nbsp;🪧</div>
+      
       <div class="art-summary-text">
         <div class="art-summary-title">6 artículos disponibles para patrocinar</div>
         <div class="art-summary-sub">Coffee Break · Bolsas Kit · Carrera 5K · Libretas · Playeras · Banner</div>
@@ -860,6 +873,103 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- FOOTER -->
+<div class="divider"></div>
+
+<!-- ALIADOS -->
+<section id="aliados">
+  <div class="container">
+    <p class="sec-label">Gracias por su apoyo</p>
+    <h2 class="sec-title">Patrocinadores y <em>Aliados</em></h2>
+    <div class="aliados-grid">
+      <div class="aliado-card">
+        <img src="data:image/png;base64,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" alt="Marxion" style="max-width:140px;max-height:45px;object-fit:contain"/>
+        <div class="aliado-tooltip">
+          <div class="aliado-nivel">Aliado Estratégico</div>
+          <div class="aliado-tooltip-name">Marxion</div>
+          <div class="aliado-tooltip-desc">Social Media Management<br>Content Shooting<br>Website Development<br>Content Creation</div>
+        </div>
+      </div>
+      <div class="aliado-card">
+        <div class="aliado-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="M8 6V5a2 2 0 0 1 4 0v1"/></svg>
+          <span>Platino</span>
+        </div>
+        <div class="aliado-tooltip">
+          <div class="aliado-nivel">Platino</div>
+          <div class="aliado-tooltip-name">Patrocinador Platino</div>
+          <div class="aliado-tooltip-desc">Próximamente</div>
+        </div>
+      </div>
+      <div class="aliado-card">
+        <div class="aliado-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="M8 6V5a2 2 0 0 1 4 0v1"/></svg>
+          <span>Oro</span>
+        </div>
+        <div class="aliado-tooltip">
+          <div class="aliado-nivel">Oro</div>
+          <div class="aliado-tooltip-name">Patrocinador Oro</div>
+          <div class="aliado-tooltip-desc">Próximamente</div>
+        </div>
+      </div>
+      <div class="aliado-card">
+        <div class="aliado-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="M8 6V5a2 2 0 0 1 4 0v1"/></svg>
+          <span>Oro</span>
+        </div>
+        <div class="aliado-tooltip">
+          <div class="aliado-nivel">Oro</div>
+          <div class="aliado-tooltip-name">Patrocinador Oro</div>
+          <div class="aliado-tooltip-desc">Próximamente</div>
+        </div>
+      </div>
+      <div class="aliado-card">
+        <div class="aliado-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="M8 6V5a2 2 0 0 1 4 0v1"/></svg>
+          <span>Oro</span>
+        </div>
+        <div class="aliado-tooltip">
+          <div class="aliado-nivel">Oro</div>
+          <div class="aliado-tooltip-name">Patrocinador Oro</div>
+          <div class="aliado-tooltip-desc">Próximamente</div>
+        </div>
+      </div>
+      <div class="aliado-card">
+        <div class="aliado-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="M8 6V5a2 2 0 0 1 4 0v1"/></svg>
+          <span>Aliado</span>
+        </div>
+        <div class="aliado-tooltip">
+          <div class="aliado-nivel">Aliado</div>
+          <div class="aliado-tooltip-name">Aliado Comercial</div>
+          <div class="aliado-tooltip-desc">Próximamente</div>
+        </div>
+      </div>
+      <div class="aliado-card">
+        <div class="aliado-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="M8 6V5a2 2 0 0 1 4 0v1"/></svg>
+          <span>Aliado</span>
+        </div>
+        <div class="aliado-tooltip">
+          <div class="aliado-nivel">Aliado</div>
+          <div class="aliado-tooltip-name">Aliado Comercial</div>
+          <div class="aliado-tooltip-desc">Próximamente</div>
+        </div>
+      </div>
+      <div class="aliado-card">
+        <div class="aliado-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="M8 6V5a2 2 0 0 1 4 0v1"/></svg>
+          <span>Aliado</span>
+        </div>
+        <div class="aliado-tooltip">
+          <div class="aliado-nivel">Aliado</div>
+          <div class="aliado-tooltip-name">Aliado Comercial</div>
+          <div class="aliado-tooltip-desc">Próximamente</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-inner">
     <div>
@@ -877,10 +987,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div style="display:flex;flex-direction:column;gap:.45rem">
       <div style="font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gl);margin-bottom:.2rem">Contacto</div>
-      <a href="tel:+525549270288" style="font-size:.62rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#E5C97A'" onmouseout="this.style.color='rgba(255,255,255,.55)'">📞 IReanimación · +52 55 4927 0288</a>
-      <a href="mailto:contacto@reanimacion.lat" style="font-size:.62rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#E5C97A'" onmouseout="this.style.color='rgba(255,255,255,.55)'">✉ contacto@reanimacion.lat</a>
-      <a href="tel:+529871120060" style="font-size:.62rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#E5C97A'" onmouseout="this.style.color='rgba(255,255,255,.55)'">📞 Care &amp; Zen · 987 112 0060</a>
-      <a href="tel:+529871418629" style="font-size:.62rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#E5C97A'" onmouseout="this.style.color='rgba(255,255,255,.55)'">📞 Leyla's Smart Health · 987 141 8629</a>
+      <a href="tel:+525549270288" style="font-size:.62rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#E5C97A'" onmouseout="this.style.color='rgba(255,255,255,.55)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> IReanimación · +52 55 4927 0288</a>
+      <a href="mailto:contacto@reanimacion.lat" style="font-size:.62rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#E5C97A'" onmouseout="this.style.color='rgba(255,255,255,.55)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> contacto@reanimacion.lat</a>
+      <a href="tel:+529871120060" style="font-size:.62rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#E5C97A'" onmouseout="this.style.color='rgba(255,255,255,.55)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Care &amp; Zen · 987 112 0060</a>
+      <a href="tel:+529871418629" style="font-size:.62rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#E5C97A'" onmouseout="this.style.color='rgba(255,255,255,.55)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Leyla's Smart Health · 987 141 8629</a>
     </div>
     <div class="footer-copy">© 2026 Medical Summit Cozumel<br>Leyla's Smart Health · IReanimación · Care &amp; Zen</div>
   </div>
@@ -901,33 +1011,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="art-modal-intro">Posiciona tu marca en los artículos físicos del congreso. Cada opción ofrece visibilidad directa ante más de <strong>300 asistentes especializados</strong> durante los 3 días del evento. Contáctanos para conocer precios y disponibilidad.</p>
       <div class="art-grid">
         <div class="art-card">
-          <div class="art-card-top"><div class="art-card-icon">☕</div><div><div class="art-card-name">Coffee Break</div><div class="art-card-qty">300 asistentes · 3 días</div></div></div>
+          <div class="art-card-top"><div><div class="art-card-name">Coffee Break</div><div class="art-card-qty">300 asistentes · 3 días</div></div></div>
           <p class="art-card-desc">Branding completo en la estación de café — mesas, manteles y carteles con tu logo. Opción de distribuir muestras o material promocional durante los recesos.</p>
         </div>
         <div class="art-card">
-          <div class="art-card-top"><div class="art-card-icon">👜</div><div><div class="art-card-name">Bolsas Kit</div><div class="art-card-qty">350 unidades</div></div></div>
+          <div class="art-card-top"><div><div class="art-card-name">Bolsas Kit</div><div class="art-card-qty">350 unidades</div></div></div>
           <p class="art-card-desc">Cada asistente recibe su kit en tu bolsa con logo impreso. Entregadas en el registro, garantizando máxima exposición desde el primer momento.</p>
         </div>
         <div class="art-card">
-          <div class="art-card-top"><div class="art-card-icon">🏃</div><div><div class="art-card-name">Carrera 5K</div><div class="art-card-qty">150 participantes</div></div></div>
+          <div class="art-card-top"><div><div class="art-card-name">Carrera 5K</div><div class="art-card-qty">150 participantes</div></div></div>
           <p class="art-card-desc">Logo en playeras y dorsales de la carrera. Actividad especial que combina salud y comunidad. Opción de stand o bandera en la meta.</p>
         </div>
         <div class="art-card">
-          <div class="art-card-top"><div class="art-card-icon">📓</div><div><div class="art-card-name">Libretas y Lapiceros</div><div class="art-card-qty">350 kits</div></div></div>
+          <div class="art-card-top"><div><div class="art-card-name">Libretas y Lapiceros</div><div class="art-card-qty">350 kits</div></div></div>
           <p class="art-card-desc">Tu logo en el material de trabajo esencial de cada asistente. Presentes en cada conferencia y taller. Alta recordación de marca post-evento.</p>
         </div>
         <div class="art-card">
-          <div class="art-card-top"><div class="art-card-icon">👕</div><div><div class="art-card-name">Playeras y Gorras</div><div class="art-card-qty">150 de cada una</div></div></div>
+          <div class="art-card-top"><div><div class="art-card-name">Playeras y Gorras</div><div class="art-card-qty">150 de cada una</div></div></div>
           <p class="art-card-desc">Tu marca en movimiento. Usadas en actividades del congreso y más allá, extendiendo visibilidad mucho después del evento. Foto oficial incluida.</p>
         </div>
         <div class="art-card">
-          <div class="art-card-top"><div class="art-card-icon">🪧</div><div><div class="art-card-name">Banner</div><div class="art-card-qty">Zona de exposición</div></div></div>
+          <div class="art-card-top"><div><div class="art-card-name">Banner</div><div class="art-card-qty">Zona de exposición</div></div></div>
           <p class="art-card-desc">Presencia visual permanente durante los 3 días del congreso. Ubicación estratégica en zona de paso obligado. Posibilidad de más de un banner.</p>
         </div>
       </div>
       <div class="art-modal-contact">
-        <span>📧 <a href="mailto:contacto@reanimacion.lat">contacto@reanimacion.lat</a></span>
-        <span>📞 IReanimación: +52 55 4927 0288 &nbsp;·&nbsp; Care &amp; Zen: 987 112 0060</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> <a href="mailto:contacto@reanimacion.lat">contacto@reanimacion.lat</a></span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> IReanimación: +52 55 4927 0288 &nbsp;·&nbsp; Care &amp; Zen: 987 112 0060</span>
       </div>
       <a href="mailto:contacto@reanimacion.lat?subject=Patrocinio de Artículos · MSC Cozumel 2026" class="art-modal-cta">Solicitar información</a>
     </div>
@@ -948,7 +1058,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="art-modal-intro">Ocupa un espacio físico de <strong>9 m²</strong> en el área de exposición del Planetario Cha'an Ka'an. Presentas tu marca, productos o servicios directamente ante más de <strong>300 asistentes especializados</strong>. Tres niveles de visibilidad disponibles.</p>
       <div class="art-grid" style="grid-template-columns:1fr 1fr 1fr">
         <div class="art-card" style="border-top:3px solid var(--gold)">
-          <div class="art-card-top"><div class="art-card-icon">🥇</div><div><div class="art-card-name">Platino</div><div class="art-card-qty">Máxima visibilidad</div></div></div>
+          <div class="art-card-top"><div><div class="art-card-name">Platino</div><div class="art-card-qty">Máxima visibilidad</div></div></div>
           <p class="art-card-desc" style="margin-bottom:.6rem">Stand 9 m² en zona premium del evento.</p>
           <ul style="list-style:none;font-size:.65rem;color:var(--tm);line-height:2">
             <li>✓ Marca en programa oficial</li>
@@ -959,7 +1069,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </div>
         <div class="art-card">
-          <div class="art-card-top"><div class="art-card-icon">🥈</div><div><div class="art-card-name">Oro</div><div class="art-card-qty">Alta visibilidad</div></div></div>
+          <div class="art-card-top"><div><div class="art-card-name">Oro</div><div class="art-card-qty">Alta visibilidad</div></div></div>
           <p class="art-card-desc" style="margin-bottom:.6rem">Stand 9 m² con presencia en medios del evento.</p>
           <ul style="list-style:none;font-size:.65rem;color:var(--tm);line-height:2">
             <li>✓ Marca en programa oficial</li>
@@ -968,7 +1078,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </div>
         <div class="art-card">
-          <div class="art-card-top"><div class="art-card-icon">🥉</div><div><div class="art-card-name">Plata</div><div class="art-card-qty">Desde $15,000 MXN</div></div></div>
+          <div class="art-card-top"><div><div class="art-card-name">Plata</div></div></div>
           <p class="art-card-desc" style="margin-bottom:.6rem">Stand 3×3 m con presencia en programa.</p>
           <ul style="list-style:none;font-size:.65rem;color:var(--tm);line-height:2">
             <li>✓ Marca en programa oficial</li>
@@ -977,8 +1087,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="art-modal-contact">
-        <span>📧 <a href="mailto:contacto@reanimacion.lat">contacto@reanimacion.lat</a></span>
-        <span>📞 IReanimación: +52 55 4927 0288 &nbsp;·&nbsp; Care &amp; Zen: 987 112 0060</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> <a href="mailto:contacto@reanimacion.lat">contacto@reanimacion.lat</a></span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> IReanimación: +52 55 4927 0288 &nbsp;·&nbsp; Care &amp; Zen: 987 112 0060</span>
       </div>
       <a href="mailto:contacto@reanimacion.lat?subject=Patrocinio Stand · MSC Cozumel 2026" class="art-modal-cta">Solicitar información</a>
     </div>
@@ -999,7 +1109,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="art-modal-intro">Posiciona tu marca en los canales digitales del congreso antes, durante y después del evento. Llega a más de <strong>300 médicos y especialistas</strong> con contenido estratégico en redes sociales y el sitio web oficial.</p>
       <div class="art-grid">
         <div class="art-card">
-          <div class="art-card-top"><div class="art-card-icon">📱</div><div><div class="art-card-name">Básico</div><div class="art-card-qty">$15,000 MXN</div></div></div>
+          <div class="art-card-top"><div><div class="art-card-name">Básico</div></div></div>
           <ul style="list-style:none;font-size:.68rem;color:var(--tm);line-height:2">
             <li>✓ Logo en sitio web con link</li>
             <li>✓ 2 publicaciones en redes sociales</li>
@@ -1007,7 +1117,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </div>
         <div class="art-card">
-          <div class="art-card-top"><div class="art-card-icon">📲</div><div><div class="art-card-name">Interactivo</div><div class="art-card-qty">$20,000 MXN</div></div></div>
+          <div class="art-card-top"><div><div class="art-card-name">Interactivo</div></div></div>
           <ul style="list-style:none;font-size:.68rem;color:var(--tm);line-height:2">
             <li>✓ Todo lo del paquete Básico</li>
             <li>✓ 4 historias interactivas</li>
@@ -1016,7 +1126,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </div>
         <div class="art-card" style="border-top:2px solid var(--bm)">
-          <div class="art-card-top"><div class="art-card-icon">🚀</div><div><div class="art-card-name">Inmersión</div><div class="art-card-qty">$25,000 MXN</div></div></div>
+          <div class="art-card-top"><div><div class="art-card-name">Inmersión</div></div></div>
           <ul style="list-style:none;font-size:.68rem;color:var(--tm);line-height:2">
             <li>✓ Todo lo del Interactivo</li>
             <li>✓ Video publicitario 30 seg</li>
@@ -1024,7 +1134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </div>
         <div class="art-card" style="background:var(--bdeep);border-color:var(--bdeep)">
-          <div class="art-card-top"><div class="art-card-icon">⭐</div><div><div class="art-card-name" style="color:#fff">Elite</div><div class="art-card-qty" style="color:var(--gl)">$30,000 MXN</div></div></div>
+          <div class="art-card-top"><div><div class="art-card-name" style="color:#fff">Elite</div></div></div>
           <ul style="list-style:none;font-size:.68rem;color:rgba(255,255,255,.75);line-height:2">
             <li style="color:var(--gl)">✓ Todo lo del Inmersión</li>
             <li>✓ Links directos a asistentes</li>
@@ -1033,8 +1143,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="art-modal-contact">
-        <span>📧 <a href="mailto:contacto@ms-cozumel.org">contacto@ms-cozumel.org</a></span>
-        <span>📞 Care &amp; Zen: 987 112 0060 &nbsp;·&nbsp; IReanimación: +52 55 4927 0288</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> <a href="mailto:contacto@ms-cozumel.org">contacto@ms-cozumel.org</a></span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Care &amp; Zen: 987 112 0060 &nbsp;·&nbsp; IReanimación: +52 55 4927 0288</span>
       </div>
       <a href="mailto:contacto@ms-cozumel.org?subject=Patrocinio Digital · MSC Cozumel 2026" class="art-modal-cta">Solicitar información</a>
     </div>
@@ -1113,14 +1223,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="modal-panel" id="mp2">
         <p style="font-size:.7rem;color:var(--tmut);margin-bottom:1.1rem;line-height:1.7">Selecciona tu modalidad de registro. Precios en pesos mexicanos.</p>
         <div class="plan-opts">
-          <label class="plan-opt" data-plan="estudiante"><input type="radio" name="planr" value="estudiante"/><div><div class="po-name">Estudiante</div><div class="po-desc">Conferencias · Constancia · Material digital</div></div><div class="po-price">$750</div></label>
-          <label class="plan-opt" data-plan="paramedico"><input type="radio" name="planr" value="paramedico"/><div><div class="po-name">Paramédico</div><div class="po-desc">Conferencias · Constancia</div></div><div class="po-price">$900</div></label>
-          <label class="plan-opt" data-plan="enfermeria"><input type="radio" name="planr" value="enfermeria"/><div><div class="po-name">Enfermería</div><div class="po-desc">Conferencias · Constancia</div></div><div class="po-price">$1,200</div></label>
-          <label class="plan-opt" data-plan="residente"><input type="radio" name="planr" value="residente"/><div><div class="po-name">Residente</div><div class="po-desc">Acceso completo · Constancia oficial</div></div><div class="po-price">$1,400</div></label>
-          <label class="plan-opt" data-plan="medico"><input type="radio" name="planr" value="medico"/><div><div class="po-name">Médico</div><div class="po-desc">Acceso completo 3 días · Brindis · Memorias</div></div><div class="po-price">$1,900</div></label>
-          <label class="plan-opt" data-plan="taller"><input type="radio" name="planr" value="taller"/><div><div class="po-name">Taller (POCUS / Trauma / Toxicología)</div><div class="po-desc">Máx. 24 alumnos · Pre-inscripción requerida</div></div><div class="po-price">$2,000</div></label>
+          <label class="plan-opt" data-plan="estudiante"><input type="radio" name="planr" value="estudiante"/><div><div class="po-name">Estudiante</div><div class="po-desc">Conferencias · Constancia · Material digital</div></div></label>
+          <label class="plan-opt" data-plan="paramedico"><input type="radio" name="planr" value="paramedico"/><div><div class="po-name">Paramédico</div><div class="po-desc">Conferencias · Constancia</div></div></label>
+          <label class="plan-opt" data-plan="enfermeria"><input type="radio" name="planr" value="enfermeria"/><div><div class="po-name">Enfermería</div><div class="po-desc">Conferencias · Constancia</div></div></label>
+          <label class="plan-opt" data-plan="residente"><input type="radio" name="planr" value="residente"/><div><div class="po-name">Residente</div><div class="po-desc">Acceso completo · Constancia oficial</div></div></label>
+          <label class="plan-opt" data-plan="medico"><input type="radio" name="planr" value="medico"/><div><div class="po-name">Médico</div><div class="po-desc">Acceso completo 3 días · Brindis · Memorias</div></div></label>
+          <label class="plan-opt" data-plan="taller"><input type="radio" name="planr" value="taller"/><div><div class="po-name">Taller (POCUS / Trauma / Toxicología)</div><div class="po-desc">Máx. 24 alumnos · Pre-inscripción requerida</div></div></label>
         </div>
-        <p style="font-size:.62rem;color:var(--tmut);line-height:1.6">💳 En producción el pago se procesa vía Stripe o MercadoPago. Recibirás tu ticket PDF con QR único al confirmar.</p>
+        <p style="font-size:.62rem;color:var(--tmut);line-height:1.6">· En producción el pago se procesa vía Stripe o MercadoPago. Recibirás tu ticket PDF con QR único al confirmar.</p>
       </div>
       <div class="modal-panel" id="mp3">
         <div class="conf-icon">✓</div>
@@ -1169,8 +1279,14 @@ window.addEventListener('scroll',()=>{
 // ── LIVE STATS ──
 let DB = [];
 function updateStats(){
-  animNum('s-reg', 58);
-  animNum('s-conf', 32);
+  // Auto-increment: base date June 25 2026, +2 reg/day, +1 conf/day
+  const base = new Date('2026-06-25');
+  const today = new Date();
+  const days = Math.max(0, Math.floor((today - base) / 86400000));
+  const reg = Math.min(58 + days * 2, 120);
+  const conf = Math.min(32 + days, 80);
+  animNum('s-reg', reg);
+  animNum('s-conf', conf);
 }
 function animNum(id, target){
   const el=document.getElementById(id); if(!el) return;
@@ -1248,7 +1364,7 @@ function validateStep1(){
   return ok;
 }
 
-const PLAN_PRICES={estudiante:'$750 MXN',paramedico:'$900 MXN',enfermeria:'$1,200 MXN',residente:'$1,400 MXN',medico:'$1,900 MXN',taller:'$2,000 MXN',general:'$8,000 MXN',vip:'$9,000 MXN',elite:'$15,000 MXN'};
+const PLAN_PRICES={};
 const PLAN_NAMES={estudiante:'Estudiante',paramedico:'Paramédico',enfermeria:'Enfermería',residente:'Residente',medico:'Médico',taller:'Taller',general:'Paquete General',vip:'Paquete VIP',elite:'Paquete Elite'};
 
 function saveRegistro(){
@@ -1286,68 +1402,58 @@ function closeMob(){hamBtn.classList.remove('open');mobMenu.classList.remove('op
 // ── PATROCINIO MODAL DATA ──
 const PAT_DATA = {
   stand:{
-    icon:'🏢', tier:'Patrocinio Comercial', name:'Stand Comercial · 9 m²',
+    icon:'', tier:'Patrocinio Comercial', name:'Stand Comercial · 9 m²',
     desc:'Ocupa un espacio físico de 9 m² en el área de exposición del Planetario Cha\'an Ka\'an. Presenta tu marca, productos o servicios directamente ante más de 300 asistentes especializados.',
     tiers:[
-      {label:'🥇 Platino',items:['Stand 9 m² en zona premium','Marca en programa oficial','Publicaciones digitales patrocinadas','Mención en todos los recesos','Video en pantalla durante recesos','Exclusividad de producto/segmento']},
-      {label:'🥈 Oro',    items:['Stand 9 m²','Marca en programa oficial','Publicaciones digitales']},
-      {label:'🥉 Plata',  items:['Stand 9 m² · 3×3 m','Marca en programa oficial','$15,000 MXN']},
-    ],
-    price:'Desde $15,000 MXN', contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
+      {label:'① Platino',items:['Stand 9 m² en zona premium','Marca en programa oficial','Publicaciones digitales patrocinadas','Mención en todos los recesos','Video en pantalla durante recesos','Exclusividad de producto/segmento']},
+      {label:'② Oro',    items:['Stand 9 m²','Marca en programa oficial','Publicaciones digitales']},
+      {label:'③ Plata',  items:['Stand 9 m² · 3×3 m','Marca en programa oficial']},
+    ], contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
   },
   'digital-basico':{
-    icon:'📱', tier:'Presencia Digital', name:'Paquete Básico',
+    icon:'01', tier:'Presencia Digital', name:'Paquete Básico',
     desc:'Visibilidad digital en el congreso más importante de la medicina en Quintana Roo. Llega a los asistentes antes, durante y después del evento.',
-    bens:['Logo en sitio web del congreso con link a tu web','Mención en redes sociales (2 publicaciones)','2 historias en Instagram / Facebook'],
-    price:'$15,000 MXN', contact:'contacto@ms-cozumel.org', tel:'987 112 0060'
+    bens:['Logo en sitio web del congreso con link a tu web','Mención en redes sociales (2 publicaciones)','2 historias en Instagram / Facebook'], contact:'contacto@ms-cozumel.org', tel:'987 112 0060'
   },
   'digital-plus':{
-    icon:'📲', tier:'Presencia Digital', name:'Paquete Interactivo',
+    icon:'02', tier:'Presencia Digital', name:'Paquete Interactivo',
     desc:'Mayor alcance con contenido interactivo y banner publicitario. Tu marca destacada en los canales del congreso durante toda la campaña.',
-    bens:['Todo lo del paquete Básico','4 historias interactivas en redes sociales','Banner publicitario en el evento','Mención especial en ceremonia de apertura'],
-    price:'$20,000 MXN', contact:'contacto@ms-cozumel.org', tel:'987 112 0060'
+    bens:['Todo lo del paquete Básico','4 historias interactivas en redes sociales','Banner publicitario en el evento','Mención especial en ceremonia de apertura'], contact:'contacto@ms-cozumel.org', tel:'987 112 0060'
   },
   'digital-premium':{
-    icon:'🚀', tier:'Presencia Digital', name:'Paquete Inmersión / Elite',
+    icon:'03', tier:'Presencia Digital', name:'Paquete Inmersión / Elite',
     desc:'La máxima visibilidad digital. Video publicitario, posts destacados y acceso directo a la base de asistentes. El paquete Elite incluye impacto total con mención especial.',
-    bens:['Todo lo del paquete Interactivo','Video publicitario 30 seg en pantallas del evento','Posts destacados con mayor alcance orgánico','Elite: links directos + mención especial + impacto total'],
-    price:'$25,000 – $30,000 MXN', contact:'contacto@ms-cozumel.org', tel:'987 112 0060'
+    bens:['Todo lo del paquete Interactivo','Video publicitario 30 seg en pantallas del evento','Posts destacados con mayor alcance orgánico','Elite: links directos + mención especial + impacto total'], contact:'contacto@ms-cozumel.org', tel:'987 112 0060'
   },
   coffee:{
-    icon:'☕', tier:'Patrocinio de Artículo', name:'Coffee Break',
+    icon:'◆', tier:'Patrocinio de Artículo', name:'Coffee Break',
     desc:'Tu marca presente en los momentos de mayor convivencia del congreso. El coffee break reúne a todos los asistentes en un ambiente relajado, ideal para el posicionamiento de marca.',
-    bens:['Branding en estación de café (mesas, manteles, carteles)','300 asistentes por día · 3 días de congreso','Mención como patrocinador en el programa oficial','Opción de distribuir material promocional en la estación'],
-    price:'Consultar', contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
+    bens:['Branding en estación de café (mesas, manteles, carteles)','300 asistentes por día · 3 días de congreso','Mención como patrocinador en el programa oficial','Opción de distribuir material promocional en la estación'], contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
   },
   bolsas:{
-    icon:'👜', tier:'Patrocinio de Artículo', name:'Bolsas Kit del Congreso',
+    icon:'◆', tier:'Patrocinio de Artículo', name:'Bolsas Kit del Congreso',
     desc:'Cada asistente recibe su kit en tu bolsa. Un artículo que permanece con el asistente durante y después del evento, con visibilidad continua de tu marca.',
-    bens:['350 bolsas con tu logo impreso','Entregadas a todos los asistentes en el registro','Logo en el programa del congreso como patrocinador','Máxima exposición desde el primer momento'],
-    price:'Consultar', contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
+    bens:['350 bolsas con tu logo impreso','Entregadas a todos los asistentes en el registro','Logo en el programa del congreso como patrocinador','Máxima exposición desde el primer momento'], contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
   },
   carrera:{
-    icon:'🏃', tier:'Patrocinio de Artículo', name:'Carrera 5K',
+    icon:'◆', tier:'Patrocinio de Artículo', name:'Carrera 5K',
     desc:'Patrocina la Carrera 5K del congreso, una actividad especial que combina salud, comunidad y diversión. Alta visibilidad en un entorno dinámico y memorable.',
-    bens:['Logo en playeras y dorsales de la carrera','150 participantes · Atletas y médicos del congreso','Mención en redes sociales y materiales del evento','Oportunidad de colocar stand o bandera en la meta'],
-    price:'Consultar', contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
+    bens:['Logo en playeras y dorsales de la carrera','150 participantes · Atletas y médicos del congreso','Mención en redes sociales y materiales del evento','Oportunidad de colocar stand o bandera en la meta'], contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
   },
   libretas:{
-    icon:'📓', tier:'Patrocinio de Artículo', name:'Libretas y Lapiceros',
+    icon:'◆', tier:'Patrocinio de Artículo', name:'Libretas y Lapiceros',
     desc:'Material de trabajo esencial para todos los asistentes. Tu logo presente en cada toma de notas, cada conferencia, cada taller del congreso.',
-    bens:['350 kits (libreta + lapicero) con tu logo','Incluidos en el kit de bienvenida de cada asistente','Presencia durante los 3 días del congreso','Alta recordación de marca post-evento'],
-    price:'Consultar', contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
+    bens:['350 kits (libreta + lapicero) con tu logo','Incluidos en el kit de bienvenida de cada asistente','Presencia durante los 3 días del congreso','Alta recordación de marca post-evento'], contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
   },
   playeras:{
-    icon:'👕', tier:'Patrocinio de Artículo', name:'Playeras y Gorras',
+    icon:'◆', tier:'Patrocinio de Artículo', name:'Playeras y Gorras',
     desc:'Tu marca en movimiento. Los asistentes usan estas prendas durante actividades del congreso y más allá, extendiendo la visibilidad de tu marca mucho después del evento.',
-    bens:['150 playeras + 150 gorras con tu logo','Usadas en actividades físicas del congreso','Visibilidad continua post-evento','Foto oficial del congreso con tu branding'],
-    price:'Consultar', contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
+    bens:['150 playeras + 150 gorras con tu logo','Usadas en actividades físicas del congreso','Visibilidad continua post-evento','Foto oficial del congreso con tu branding'], contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
   },
   banner:{
-    icon:'🪧', tier:'Patrocinio de Artículo', name:'Banner en Zona de Exposición',
+    icon:'◆', tier:'Patrocinio de Artículo', name:'Banner en Zona de Exposición',
     desc:'Presencia visual permanente durante los 3 días del congreso. Tu banner estratégicamente ubicado en la zona de mayor tráfico del evento.',
-    bens:['Banner en zona de exposición · Ubicación premium','Visible durante los 3 días del congreso','Alta frecuencia de impacto (área de paso obligado)','Opción de colocar más de un banner (consultar)'],
-    price:'Consultar', contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
+    bens:['Banner en zona de exposición · Ubicación premium','Visible durante los 3 días del congreso','Alta frecuencia de impacto (área de paso obligado)','Opción de colocar más de un banner (consultar)'], contact:'contacto@reanimacion.lat', tel:'+52 55 4927 0288'
   },
 };
 
@@ -1375,7 +1481,7 @@ function openPat(key){
     bHtml+='<div class="pat-modal-sub">Lo que incluye</div>'+
       '<div class="pat-modal-items">'+d.bens.map(i=>'<div class="pat-modal-item">'+i+'</div>').join('')+'</div>';
   }
-  bHtml+='<div class="pat-modal-contact">📧 <a href="mailto:'+d.contact+'">'+d.contact+'</a><span>📞 '+d.tel+'</span></div>';
+  bHtml+='<div class="pat-modal-contact"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> <a href="mailto:'+d.contact+'">'+d.contact+'</a><span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> '+d.tel+'</span></div>';
   bHtml+='<a href="mailto:'+d.contact+'?subject=Patrocinio MSC Cozumel 2026 · '+d.name+'" class="pat-modal-cta">Solicitar información</a>';
   bHtml+='</div>';
   document.getElementById('patModalBody').innerHTML=bHtml;
