@@ -525,6 +525,31 @@ footer{background:var(--bdeep);color:#fff;position:relative;z-index:1}
 .aliado-nivel{font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:#1A3A4A;margin-bottom:.4rem}
 @media(max-width:700px){.aliados-grid{grid-template-columns:repeat(2,1fr)}
 .aliado-card:active .aliado-tooltip{opacity:1;transform:translateY(0)}}
+
+@media(max-width:700px){#organizadores .container > div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important}}
+
+/* ── ACORDEÓN TALLERES ── */
+.taller-acordeon{display:flex;flex-direction:column;gap:8px;margin-top:1.5rem}
+.tal-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:var(--w);border:1px solid var(--border);border-radius:12px;cursor:pointer;text-align:left;gap:1rem;transition:border-color .2s}
+.tal-btn:hover{border-color:var(--bm)}
+.tal-btn.open{border-radius:12px 12px 0 0;border-color:var(--bm)}
+.tal-tag{font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bdeep);background:var(--bl);padding:3px 10px;border-radius:4px;white-space:nowrap}
+.tal-titulo{font-size:.95rem;font-weight:600;color:var(--td)}
+.tal-ico{font-size:1.1rem;color:var(--tmut);transition:transform .25s;flex-shrink:0}
+.tal-panel{display:none;border:1px solid var(--bm);border-top:none;border-radius:0 0 12px 12px;padding:1.25rem;background:var(--ow)}
+.tal-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.25rem}
+.tal-meta-item{background:var(--w);border:1px solid var(--border);border-radius:6px;padding:.7rem 1rem}
+.tal-meta-label{font-size:.58rem;color:var(--tmut);margin:0 0 2px;text-transform:uppercase;letter-spacing:.1em}
+.tal-meta-val{font-size:.78rem;font-weight:600;color:var(--td);margin:0}
+.tal-objetivo{font-size:.76rem;color:var(--tm);line-height:1.75;margin:0 0 1.1rem}
+.tal-mod-title{font-size:.58rem;font-weight:600;color:var(--td);margin:0 0 6px;text-transform:uppercase;letter-spacing:.1em}
+.tal-mods{display:flex;flex-direction:column;gap:5px;margin-bottom:1.25rem}
+.tal-mod{display:flex;gap:8px;align-items:baseline}
+.tal-mod-num{font-size:.62rem;color:var(--bdeep);font-weight:600;min-width:24px}
+.tal-mod-txt{font-size:.76rem;color:var(--tm)}
+.tal-cta{width:100%;padding:.75rem;background:var(--bdeep);color:#fff;border:none;border-radius:6px;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;font-family:'Montserrat',sans-serif;transition:background .3s}
+.tal-cta:hover{background:var(--gold)}
+@media(max-width:560px){.tal-meta{grid-template-columns:1fr 1fr}.tal-meta-item:last-child{grid-column:span 2}}
 </style>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -714,12 +739,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="sec-title">Ponentes <em>2026</em></h2>
     <div class="ponentes-grid">
       <div class="ponente-card"><div class="ponente-photo"><img src="dr-jorge-rayo-chavez-8.webp" alt="Dr. Jorge Rayo Chávez" loading="lazy"/></div><div class="ponente-name">Dr. Jorge Rayo Chávez</div><div class="ponente-esp">Cardiología · Ecocardiografía</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Cardiología.<br>Alta especialidad en Ecocardiografía.<br>Jefe del servicio de enfermedades valvulares, Hospital de Cardiología CMN Siglo XXI.</p></div>
-      <div class="ponente-card"><div class="ponente-photo"><img src="dr-gustavo-lopez-9.webp" alt="Dr. Gustavo López" loading="lazy"/></div><div class="ponente-name">Dr. Gustavo López</div><div class="ponente-esp">Urgencias · Toxicología</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Medicina de Urgencias.<br>Alta especialidad en Toxicología.<br>Presidente de la Sociedad Mexicana de Medicina de Emergencias (SMME).</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dr-gustavo-lopez-9.webp" alt="Dr. Gustavo López Orozco" loading="lazy"/></div><div class="ponente-name">Dr. Gustavo López Orozco</div><div class="ponente-esp">Urgencias · Toxicología</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Medicina de Urgencias.<br>Alta especialidad en Toxicología.<br>Presidente de la Sociedad Mexicana de Medicina de Emergencias (SMME).</p></div>
       <div class="ponente-card"><div class="ponente-photo"><img src="dr-luis-daniel-sanchez-arreola-10.webp" alt="Dr. Luis Daniel Sánchez Arreola" loading="lazy"/></div><div class="ponente-name">Dr. Luis Daniel Sánchez Arreola</div><div class="ponente-esp">Urgencias · Trauma</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Medicina de Urgencias.<br>Maestría en Administración.<br>Director del Programa de Reanimación Avanzada en Trauma (RAT).<br>Jefe del servicio de urgencias, Hospital General La Villa.</p></div>
       <div class="ponente-card"><div class="ponente-photo"><img src="dr-alejandro-rueda-loaiza-11.webp" alt="Dr. Alejandro Rueda Loaiza" loading="lazy"/></div><div class="ponente-name">Dr. Alejandro Rueda Loaiza</div><div class="ponente-esp">Urología</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Urología.<br>Fellow en Hospital General Universitario Gregorio Marañón, Madrid.<br>Investigador avalado por Cofepris y FDA.<br>Miembro de la Confederación Americana y Asociación Europea de Urología.<br>Práctica privada Hospital Ángeles.</p></div>
-      <div class="ponente-card"><div class="ponente-photo"><img src="dr-rafael-vidal-tamayo-12.webp" alt="Dr. Rafael Vidal Tamayo" loading="lazy"/></div><div class="ponente-name">Dr. Rafael Vidal Tamayo</div><div class="ponente-esp">Endocrinología · Medicina Interna</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Medicina Interna y Endocrinología.<br>Práctica clínica en el Hospital Médica Sur.</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dr-rafael-vidal-tamayo-12.webp" alt="Dr. Rafael Vidal Tamayo Ramírez" loading="lazy"/></div><div class="ponente-name">Dr. Rafael Vidal Tamayo Ramírez</div><div class="ponente-esp">Endocrinología · Medicina Interna</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Medicina Interna y Endocrinología.<br>Práctica clínica en el Hospital Médica Sur.</p></div>
       <div class="ponente-card"><div class="ponente-photo"><img src="dra-danae-alejandra-maya-najera-13.webp" alt="Dra. Dánae Alejandra Maya Nájera" loading="lazy"/></div><div class="ponente-name">Dra. Dánae Alejandra Maya Nájera</div><div class="ponente-esp">Urgencias · Simulación</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Medicina de Urgencias.<br>Maestría en Dirección y Gestión de Instituciones de Salud.<br>Profesora de Simulación Clínica.<br>Buzo certificada por PADI en aguas abiertas y avanzado.</p></div>
-      <div class="ponente-card"><div class="ponente-photo"><img src="dra-mireille-donaji-arango-mathieu-14.webp" alt="Dra. Mireille Donaji Arango Mathieu" loading="lazy"/></div><div class="ponente-name">Dra. Mireille Donaji Arango Mathieu</div><div class="ponente-esp">Urgencias · Toxicología</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Medicina de Urgencias.<br>Alta Especialidad en Toxicología.<br>Médico de vuelo, Dirección Médica Medwings World.<br>Líder de equipo en helicóptero para Fórmula 1.</p></div>
+      <div class="ponente-card"><div class="ponente-photo"><img src="dra-mireille-donaji-arango-mathieu-14.webp" alt="Dra. Mireille Donaji Arango Mathieu" loading="lazy"/></div><div class="ponente-name">Dra. Mireille Donaji Arango Mathieu</div><div class="ponente-esp">Urgencias · Toxicología</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Medicina de Urgencias.<br>Alta Especialidad en Toxicología.<br>Médico de vuelo, Dirección Médica Medwings World.<br>Líder de equipo en helicóptero para Fórmula 1, hasta el año 2025.</p></div>
       <div class="ponente-card"><div class="ponente-photo"><img src="dr-leonardo-bravo-ruiz-15.webp" alt="Dr. Leonardo Bravo Ruiz" loading="lazy"/></div><div class="ponente-name">Dr. Leonardo Bravo Ruiz</div><div class="ponente-esp">Cirugía Plástica · Reconstructiva</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Cirugía General y Cirugía Plástica y Reconstructiva.<br>Alta Especialidad en Microcirugía y Cirugía de Mano.<br>Médico adscrito al servicio de quemados, Hospital Rubén Leñero.<br>Miembro del Tlalpan Team, 3 trasplantes de miembro superior en América Latina.</p></div>
       <div class="ponente-card"><div class="ponente-photo"><img src="dr-jorge-ivan-ceballos-mendoza-16.webp" alt="Dr. Jorge Iván Ceballos Mendoza" loading="lazy"/></div><div class="ponente-name">Dr. Jorge Iván Ceballos Mendoza</div><div class="ponente-esp">Ginecología y Obstetricia</div><p class="ponente-bio">Médico Cirujano.<br>Especialista en Ginecología y Obstetricia.<br>Maestría en Administración y Dirección de Empresas.<br>Miembro del Colegio y Federación Mexicana de Ginecología y Obstetricia.<br>Jefe de la Clínica de Planificación Familiar, Hospital Gea González, CDMX.</p></div>
       <div class="ponente-card"><div class="ponente-photo"><img src="dr-victor-hugo-pimentel-17.webp" alt="Dr. Victor Hugo Pimentel" loading="lazy"/></div><div class="ponente-name">Dr. Victor Hugo Pimentel</div><div class="ponente-esp">Medicina · Simulación</div><p class="ponente-bio">Médico Cirujano.<br>Maestría en Educación.<br>Instructor BLS/ACLS (AHA), PHTLS y AMLS (NAEMT).<br>Profesor de Simulación Clínica.<br>Evaluador por el Consejo Mexicano para la Acreditación de la Educación Médica (COMAEM).</p></div>
@@ -736,35 +761,141 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="sec-label">Programa académico</p>
     <h2 class="sec-title">Agenda <em>2026</em></h2>
     <div class="day-tabs">
-      <button class="day-tab active" onclick="showDay(1)">Día 1 · 02 Sep · Talleres</button>
-      <button class="day-tab" onclick="showDay(2)">Día 2 · 03 Sep · Conferencias</button>
-      <button class="day-tab" onclick="showDay(3)">Día 3 · 04 Sep · Cierre</button>
+      <button class="day-tab active" id="dt1" onclick="showDay(1)">Día 1 · 02 Sep · Talleres</button>
+      <button class="day-tab" id="dt2" onclick="showDay(2)">Día 2 · 03 Sep · Urgencias Médicas</button>
+      <button class="day-tab" id="dt3" onclick="showDay(3)">Día 3 · 04 Sep · Medicina Insular</button>
     </div>
     <div class="day-panel active" id="dp1">
-      <div class="agenda-row"><div class="ag-time">Taller 1</div><div><div class="ag-title">Reanimación Avanzada en Trauma</div><div class="ag-spk">Sala 3 izquierda y pasillo central · Máx. 24 alumnos</div></div><span class="badge b-taller">Taller</span></div>
-      <div class="agenda-row"><div class="ag-time">Taller 2</div><div><div class="ag-title">Toxicología Clínica</div><div class="ag-spk">Auditorio principal · Máx. 24 alumnos</div></div><span class="badge b-taller">Taller</span></div>
-      <div class="agenda-row"><div class="ag-time">Taller 3</div><div><div class="ag-title">Ultrasonido en el Sitio de Atención (POCUS)</div><div class="ag-spk">Sala 3 derecha · Máx. 24 alumnos</div></div><span class="badge b-taller">Taller</span></div>
-      <div class="agenda-row"><div class="ag-time">Info</div><div><div class="ag-title">Del 02 al 04 de Septiembre · Capacidad limitada</div><div class="ag-spk">Cupo limitado · Se asigna por orden de confirmación</div></div><span class="badge b-mesa">General</span></div>
+      <p style="font-size:.72rem;color:var(--tmut);text-align:center;margin:.5rem 0 0;letter-spacing:.1em">02 de Septiembre · Talleres simultáneos · Pre-inscripción requerida</p>
+      
+<div class="taller-acordeon">
+
+  <div>
+    <button class="tal-btn" onclick="talToggle(this,'tp0')">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="tal-tag">Taller 1</span>
+        <span class="tal-titulo">Reanimación avanzada en trauma</span>
+      </div>
+      <span class="tal-ico">&#8964;</span>
+    </button>
+    <div class="tal-panel" id="tp0">
+      <div class="tal-meta">
+        <div class="tal-meta-item"><p class="tal-meta-label">Profesor</p><p class="tal-meta-val">Dr. Luis Daniel Sánchez Arreola</p></div>
+        <div class="tal-meta-item"><p class="tal-meta-label">Duración</p><p class="tal-meta-val">8 horas</p></div>
+        <div class="tal-meta-item"><p class="tal-meta-label">Cupo máximo</p><p class="tal-meta-val">24 alumnos</p></div>
+      </div>
+      <p class="tal-objetivo">Identificar lesiones que ponen en riesgo la vida del paciente politraumatizado, aplicando algoritmos de reanimación avanzada, técnicas de inmovilización espinal y criterios de traslado seguro terrestre y aéreo.</p>
+      <p class="tal-mod-title">Módulos</p>
+      <div class="tal-mods">
+        <div class="tal-mod"><span class="tal-mod-num">I</span><span class="tal-mod-txt">Evaluación crítica y lesiones que amenazan la vida</span></div>
+        <div class="tal-mod"><span class="tal-mod-num">II</span><span class="tal-mod-txt">Talleres prácticos simultáneos (estaciones de destreza)</span></div>
+        <div class="tal-mod"><span class="tal-mod-num">III</span><span class="tal-mod-txt">Protocolos de inmovilización estricta</span></div>
+        <div class="tal-mod"><span class="tal-mod-num">IV</span><span class="tal-mod-txt">Operaciones de traslado terrestre y aeromédico</span></div>
+        <div class="tal-mod"><span class="tal-mod-num">V</span><span class="tal-mod-txt">Megacódigo y simulación integrada</span></div>
+      </div>
+      <button class="tal-cta" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20el%20Taller%201%20de%20Reanimaci%C3%B3n%20Avanzada%20en%20Trauma','_blank')">Registrarse a este taller &rarr;</button>
+    </div>
+  </div>
+
+  <div>
+    <button class="tal-btn" onclick="talToggle(this,'tp1')">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="tal-tag">Taller 2</span>
+        <span class="tal-titulo">Toxicología clínica</span>
+      </div>
+      <span class="tal-ico">&#8964;</span>
+    </button>
+    <div class="tal-panel" id="tp1">
+      <div class="tal-meta">
+        <div class="tal-meta-item"><p class="tal-meta-label">Profesor</p><p class="tal-meta-val">Dr. Gustavo López Orozco</p></div>
+        <div class="tal-meta-item"><p class="tal-meta-label">Duración</p><p class="tal-meta-val">8 horas</p></div>
+        <div class="tal-meta-item"><p class="tal-meta-label">Cupo máximo</p><p class="tal-meta-val">24 alumnos</p></div>
+      </div>
+      <p class="tal-objetivo">Identificar los principales síndromes toxicológicos, iniciar medidas de estabilización y descontaminación urgentes, y aplicar tratamiento específico en intoxicaciones, mordeduras y picaduras de mayor frecuencia epidemiológica.</p>
+      <p class="tal-mod-title">Bloques</p>
+      <div class="tal-mods">
+        <div class="tal-mod"><span class="tal-mod-num">I</span><span class="tal-mod-txt">Fundamentos, abordaje inicial y toxíndromes mayores</span></div>
+        <div class="tal-mod"><span class="tal-mod-num">II</span><span class="tal-mod-txt">Intoxicaciones por medicamentos y sustancias comunes</span></div>
+        <div class="tal-mod"><span class="tal-mod-num">III</span><span class="tal-mod-txt">Toxinología: picaduras y mordeduras de animales ponzoñosos</span></div>
+        <div class="tal-mod"><span class="tal-mod-num">IV</span><span class="tal-mod-txt">Evaluación final y clausura</span></div>
+      </div>
+      <button class="tal-cta" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20el%20Taller%202%20de%20Toxicolog%C3%ADa%20Cl%C3%ADnica','_blank')">Registrarse a este taller &rarr;</button>
+    </div>
+  </div>
+
+  <div>
+    <button class="tal-btn" onclick="talToggle(this,'tp2')">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="tal-tag">Taller 3</span>
+        <span class="tal-titulo">Ultrasonografía en el punto de atención (POCUS)</span>
+      </div>
+      <span class="tal-ico">&#8964;</span>
+    </button>
+    <div class="tal-panel" id="tp2">
+      <div class="tal-meta">
+        <div class="tal-meta-item"><p class="tal-meta-label">Profesor</p><p class="tal-meta-val">Dr. Edgard Díaz Soto</p></div>
+        <div class="tal-meta-item"><p class="tal-meta-label">Duración</p><p class="tal-meta-val">8 horas</p></div>
+        <div class="tal-meta-item"><p class="tal-meta-label">Cupo máximo</p><p class="tal-meta-val">24 alumnos</p></div>
+      </div>
+      <p class="tal-objetivo">Realizar e integrar sistemáticamente los protocolos POCUS, FAST y RUSH a pie de cama del paciente críticamente enfermo, optimizando el tiempo de diagnóstico y guiando la reanimación basada en objetivos hemodinámicos.</p>
+      <p class="tal-mod-title">Módulos</p>
+      <div class="tal-mods">
+        <div class="tal-mod"><span class="tal-mod-num">I</span><span class="tal-mod-txt">Fundamentos y optimización de imagen</span></div>
+        <div class="tal-mod"><span class="tal-mod-num">II</span><span class="tal-mod-txt">Ultrasonido pulmonar y protocolo BLUE</span></div>
+        <div class="tal-mod"><span class="tal-mod-num">III</span><span class="tal-mod-txt">Ecocardiografía focalizada (FOCUS)</span></div>
+        <div class="tal-mod"><span class="tal-mod-num">IV</span><span class="tal-mod-txt">Evaluación abdominal y protocolo FAST</span></div>
+        <div class="tal-mod"><span class="tal-mod-num">V</span><span class="tal-mod-txt">Protocolo RUSH e integración en choque</span></div>
+      </div>
+      <button class="tal-cta" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20el%20Taller%203%20de%20Ultrasonograf%C3%ADa%20POCUS','_blank')">Registrarse a este taller &rarr;</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function talToggle(btn,panelId){
+  var panel=document.getElementById(panelId);
+  var open=panel.style.display==='block';
+  panel.style.display=open?'none':'block';
+  btn.classList.toggle('open',!open);
+  btn.querySelector('.tal-ico').style.transform=open?'':'rotate(180deg)';
+}
+</script>
+
+    </div><div class="ag-spk">Sala 3 izquierda y pasillo central · Máx. 24 alumnos</div></div><span class="badge b-taller">Taller</span></div>
     </div>
 
     <div class="day-panel" id="dp2">
-      <div class="agenda-row"><div class="ag-time">Tema 1</div><div><div class="ag-title">Muerte Súbita y Cardioprotección</div><div class="ag-spk">Dr. Jorge Rayo Chávez · Cardiólogo-Ecocardiografista CMN SXXI</div></div><span class="badge b-conf">Urgencias</span></div>
-      <div class="agenda-row"><div class="ag-time">Tema 2</div><div><div class="ag-title">Urgencias Ginecológicas</div><div class="ag-spk">Dr. Jorge Iván Ceballos · Hospital General Manuel Gea González</div></div><span class="badge b-conf">Urgencias</span></div>
-      <div class="agenda-row"><div class="ag-time">Tema 3</div><div><div class="ag-title">Cólico Renal · Urgencias Metabólicas</div><div class="ag-spk">Dr. Rafael Vidal Tamayo · Hospital Médica Sur</div></div><span class="badge b-conf">Urgencias</span></div>
-      <div class="agenda-row"><div class="ag-time">Tema 4</div><div><div class="ag-title">Dolor Torácico · Toxíndromes</div><div class="ag-spk">Dr. Gustavo López · Presidente SMMU</div></div><span class="badge b-conf">Urgencias</span></div>
-      <div class="agenda-row"><div class="ag-time">Tema 5</div><div><div class="ag-title">Evaluación y Manejo de Trauma · Quemaduras</div><div class="ag-spk">Dr. Luis Daniel Sánchez Arreola · Dir. Reanimación Avanzada en Trauma</div></div><span class="badge b-conf">Traumatología</span></div>
-      <div class="agenda-row"><div class="ag-time">Tema 6</div><div><div class="ag-title">Triage y Víctimas Múltiples</div><div class="ag-spk">Dánae Alejandra Maya Nájera · Hospital General de México</div></div><span class="badge b-conf">Urgencias</span></div>
-      <div class="agenda-row"><div class="ag-time">Tema 7</div><div><div class="ag-title">Cómo Preparar un Paciente para Traslado</div><div class="ag-spk">Dra. Mireille Donaji Arango · Medwings World / Helicópteros F1</div></div><span class="badge b-conf">Urgencias</span></div>
-      <div class="agenda-row"><div class="ag-time">Info</div><div><div class="ag-title">Capacidad: 200 alumnos · Planetario Cha'an Ka'an</div><div class="ag-spk">Cozumel, Quintana Roo</div></div><span class="badge b-mesa">General</span></div>
+      <div class="agenda-row"><div class="ag-time">9:00</div><div><div class="ag-title">Bienvenida al congreso</div><div class="ag-spk">Comité organizador MSC</div></div><span class="badge b-mesa">Apertura</span></div>
+      <div class="agenda-row"><div class="ag-time">9:30</div><div><div class="ag-title">Muerte súbita y cardioprotección</div><div class="ag-spk">Dr. Edgard Díaz Soto</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">10:00</div><div><div class="ag-title">Urgencias obstétricas</div><div class="ag-spk">Dr. Jorge Iván Ceballos Mendoza</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">10:30</div><div><div class="ag-title">Manejo del cólico renal</div><div class="ag-spk">Dr. Alejandro Rueda Loaiza</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">11:00</div><div><div class="ag-title">Foto-envejecimiento y cáncer de piel</div><div class="ag-spk">Dra. Claudia Calderón Rocher</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">11:30</div><div><div class="ag-title">Coffee Break</div></div><span class="badge b-mesa">Receso</span></div>
+      <div class="agenda-row"><div class="ag-time">12:00</div><div><div class="ag-title">Urgencias metabólicas</div><div class="ag-spk">Dr. Rafael Vidal Tamayo Ramírez</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">12:30</div><div><div class="ag-title">Dolor torácico</div><div class="ag-spk">Dr. Jorge Rayo Chávez</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">13:00</div><div><div class="ag-title">Inauguración oficial del congreso</div><div class="ag-spk">Medical Summit Cozumel 2026</div></div><span class="badge b-mesa">Inauguración</span></div>
+      <div class="agenda-row"><div class="ag-time">13:30</div><div><div class="ag-title">Lunch</div></div><span class="badge b-mesa">Receso</span></div>
+      <div class="agenda-row"><div class="ag-time">14:30</div><div><div class="ag-title">Toxíndromes</div><div class="ag-spk">Dr. Gustavo López Orozco</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">15:00</div><div><div class="ag-title">Evaluación y manejo de trauma</div><div class="ag-spk">Dr. Luis Daniel Sánchez Arreola</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">15:30</div><div><div class="ag-title">Quemaduras</div><div class="ag-spk">Dr. Leonardo Bravo Ruiz</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">16:00</div><div><div class="ag-title">Triage y víctimas múltiples</div><div class="ag-spk">Dr. Víctor H. Pimentel Montejano</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">16:30</div><div><div class="ag-title">Cómo preparar un paciente para traslado</div><div class="ag-spk">Dra. Mireille Donaji Arango Mathieu</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">17:00</div><div><div class="ag-title">Cierre de actividades del día</div></div><span class="badge b-mesa">Cierre</span></div>
+      <div class="agenda-row"><div class="ag-time">18:00</div><div><div class="ag-title">Cóctel de bienvenida</div><div class="ag-spk">Hotel Casa Colonial</div></div><span class="badge b-mesa">Social</span></div>
     </div>
 
     <div class="day-panel" id="dp3">
-      <div class="agenda-row"><div class="ag-time">07:00</div><div><div class="ag-title">Carrera 5K MSC</div><div class="ag-spk">Salida: Planetario Cha'an Ka'an · 150 participantes</div></div><span class="badge b-dep">Deportivo</span></div>
-      <div class="agenda-row"><div class="ag-time">Tema 1</div><div><div class="ag-title">Trauma por Buceo y Accidentes Marinos</div><div class="ag-spk">Dr. Leonardo Bravo Ruiz · Hospital Dr. Rubén Leñero</div></div><span class="badge b-conf">Medicina Insular</span></div>
-      <div class="agenda-row"><div class="ag-time">Tema 2</div><div><div class="ag-title">Urgencias Tropicales</div><div class="ag-spk">Dra. Priscila Cruz · Johns Hopkins / HCA Florida Hospital</div></div><span class="badge b-conf">Medicina Insular</span></div>
-      <div class="agenda-row"><div class="ag-time">Tema 3</div><div><div class="ag-title">Medicina a Bordo de Crucero</div><div class="ag-spk">Dr. Alejandro Rueda Loaiza · Hospital Ángeles del Pedregal</div></div><span class="badge b-conf">Turismo Médico</span></div>
-      <div class="agenda-row"><div class="ag-time">Mesa</div><div><div class="ag-title">Mesa Redonda: Turismo Médico y Académico</div><div class="ag-spk">Panel de expertos · Planetario Cha'an Ka'an</div></div><span class="badge b-mesa">Mesa Redonda</span></div>
-      <div class="agenda-row"><div class="ag-time">Info</div><div><div class="ag-title">Capacidad: 200 alumnos · Planetario Cha'an Ka'an</div><div class="ag-spk">Cozumel, Quintana Roo</div></div><span class="badge b-mesa">General</span></div>
+      <div class="agenda-row"><div class="ag-time">9:00</div><div><div class="ag-title">Urgencias por descompresión</div><div class="ag-spk">Dra. Dánae Alejandra Maya Nájera</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">9:30</div><div><div class="ag-title">Enfermedades tropicales</div><div class="ag-spk">Dra. Priscila Cruz Menoyo</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">10:00</div><div><div class="ag-title">Medicina a bordo de crucero</div><div class="ag-spk">Dr. Salvador Velázquez Ríos</div></div><span class="badge b-conf">Conferencia</span></div>
+      <div class="agenda-row"><div class="ag-time">10:30</div><div><div class="ag-title">Foro de medicina insular</div><div class="ag-spk">Dra. Willma Padilla Barbosa · Mesa de expertos</div></div><span class="badge b-mesa">Foro</span></div>
+      <div class="agenda-row"><div class="ag-time">11:00</div><div><div class="ag-title">Foro de medicina insular — continuación</div><div class="ag-spk">Dra. Willma Padilla Barbosa</div></div><span class="badge b-mesa">Foro</span></div>
+      <div class="agenda-row"><div class="ag-time">11:30</div><div><div class="ag-title">Foro de medicina insular — continuación</div><div class="ag-spk">Dra. Willma Padilla Barbosa</div></div><span class="badge b-mesa">Foro</span></div>
+      <div class="agenda-row"><div class="ag-time">12:00</div><div><div class="ag-title">Foro de medicina insular — conclusiones</div><div class="ag-spk">Dra. Willma Padilla Barbosa</div></div><span class="badge b-mesa">Foro</span></div>
+      <div class="agenda-row"><div class="ag-time">13:00</div><div><div class="ag-title">Ceremonia de clausura</div><div class="ag-spk">Medical Summit Cozumel 2026</div></div><span class="badge b-mesa">Clausura</span></div>
+      <div class="agenda-row"><div class="ag-time">13:30</div><div><div class="ag-title">Tiempo libre · Preparación cena de clausura</div></div><span class="badge b-mesa">General</span></div>
+    </div>
     </div>
   </div>
 </section>
@@ -777,7 +908,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="sec-label" style="font-size:.8rem;letter-spacing:.25em">Inscripciones abiertas</p>
     <h2 class="sec-title">Registro al <em>congreso</em></h2>
     <div class="reg-grid-6">
-      <div class="plan-card"><div class="plan-name">Virtual</div><div class="plan-price"><sup>$</sup>750</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Transmisión en vivo</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Estudiante</div><div class="plan-price"><sup>$</sup>750</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Paramédico</div><div class="plan-price"><sup>$</sup>900</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Enfermería</div><div class="plan-price"><sup>$</sup>1,200</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Residente</div><div class="plan-price"><sup>$</sup>1,400</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Acceso completo días 2 y 3</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card featured"><div class="plan-featured-tag">RECOMENDADO</div><div class="plan-name">Médico</div><div class="plan-price"><sup>$</sup>1,900</div><div class="plan-period">MXN</div><ul class="plan-feats"><li>Acceso completo días 2 y 3</li><li>Brindis de bienvenida</li><li>Memorias digitales</li><li>Constancia curricular</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Taller</div><div class="plan-price"><sup>$</sup>2,000</div><div class="plan-period">MXN · por taller</div><ul class="plan-feats"><li>POCUS / Trauma / Toxicología</li><li>Máx. 24 alumnos</li><li>Pre-inscripción requerida</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div>
+      <div class="plan-card"><div class="plan-name">Virtual</div><div class="plan-price"><sup>$</sup>750</div><div class="plan-period">MXN · <span style="font-size:.65em;color:var(--tmut)">+ IVA</span></div><ul class="plan-feats"><li>Transmisión en vivo</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Estudiante</div><div class="plan-price"><sup>$</sup>750</div><div class="plan-period">MXN · <span style="font-size:.65em;color:var(--tmut)">+ IVA</span></div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Paramédico</div><div class="plan-price"><sup>$</sup>900</div><div class="plan-period">MXN · <span style="font-size:.65em;color:var(--tmut)">+ IVA</span></div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Enfermería</div><div class="plan-price"><sup>$</sup>1,200</div><div class="plan-period">MXN · <span style="font-size:.65em;color:var(--tmut)">+ IVA</span></div><ul class="plan-feats"><li>Conferencias plenarias</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Residente</div><div class="plan-price"><sup>$</sup>1,400</div><div class="plan-period">MXN · <span style="font-size:.65em;color:var(--tmut)">+ IVA</span></div><ul class="plan-feats"><li>Acceso completo días 2 y 3</li><li>Acceso virtual</li><li>Constancia de asistencia</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card featured"><div class="plan-featured-tag">RECOMENDADO</div><div class="plan-name">Médico</div><div class="plan-price"><sup>$</sup>1,900</div><div class="plan-period">MXN · <span style="font-size:.65em;color:var(--tmut)">+ IVA</span></div><ul class="plan-feats"><li>Acceso completo días 2 y 3</li><li>Brindis de bienvenida</li><li>Memorias digitales</li><li>Constancia curricular</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div><div class="plan-card"><div class="plan-name">Taller</div><div class="plan-price"><sup>$</sup>2,000</div><div class="plan-period">MXN · por taller · <span style="font-size:.65em;color:var(--tmut)">+ IVA</span></div><ul class="plan-feats"><li>POCUS / Trauma / Toxicología</li><li>Máx. 24 alumnos</li><li>Pre-inscripción requerida</li></ul><button class="plan-btn" onclick="window.open('https://wa.me/525549270288?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Medical%20Summit%20Cozumel%202026.','_blank')"><span>Conoce más</span></button></div>
     </div>
     <div style="margin-top:2.5rem;text-align:center;padding:1.5rem 1rem;border-top:1px solid var(--border)">
       <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--td);font-weight:300;letter-spacing:.04em;margin-bottom:1rem">
@@ -818,7 +949,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="si-row"><div class="si-ico">›</div><div class="si-txt"><strong>Planetario de Cozumel Cha'an Ka'an</strong><br>Cozumel, Quintana Roo, México</div></div>
           <div class="si-row"><div class="si-ico">›</div><div class="si-txt">Auditorio principal + salas de taller<br>Capacidad: 200 asistentes por sesión</div></div>
           <div class="si-row"><div class="si-ico">›</div><div class="si-txt">Vuelos directos desde CDMX, GDL, MTY y CUN<br>Ferri desde Playa del Carmen (45 min)</div></div>
-          <div class="si-row"><div class="si-ico">›</div><div class="si-txt">Hoteles con tarifas especiales para asistentes<br>Desde Hotel Plaza Cozumel hasta Hotel Puerto Libre Boutique</div></div>
+          <div class="si-row"><div class="si-ico">›</div><div class="si-txt">Hoteles con tarifas especiales para asistentes<br>Desde Hotel Casa Colonial hasta Hotel Puerto Libre Boutique</div></div>
           <div class="si-row"><div class="si-ico">›</div><div class="si-txt"><strong>Contacto y pagos:</strong> IReanimación · +52 55 4927 0288<br>contacto@reanimacion.lat · Gabriela Hernández</div></div>
         </div>
         <div style="margin-top:1.8rem;display:flex;gap:.8rem;flex-wrap:wrap">
@@ -874,6 +1005,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- FOOTER -->
 <div class="divider"></div>
+
+<!-- ORGANIZADORES -->
+<section id="organizadores" style="background:var(--bdeep);padding:3.5rem 0">
+  <div class="container" style="text-align:center">
+    <p class="sec-label" style="color:rgba(255,255,255,.6);font-size:.72rem;letter-spacing:.22em">Alianza organizadora</p>
+    <h2 class="sec-title" style="color:#fff">Quiénes hacen posible el <em>congreso</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.5rem">
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;padding:2rem 1.2rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);transition:background .3s" onmouseover="this.style.background='rgba(255,255,255,.12)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">
+        <img src="logo-leyla-s-smart-health-center-3.webp" alt="Leyla's Smart Health Center" style="height:50px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.9"/>
+        <p style="font-size:.62rem;color:rgba(255,255,255,.65);line-height:1.7;text-align:center;letter-spacing:.02em">Centro médico inteligente especializado en gestión de salud y bienestar integral en Cozumel, Quintana Roo.</p>
+        <a href="#" target="_blank" rel="noopener" style="font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bm);text-decoration:none;border-bottom:1px solid rgba(34,211,238,.3);padding-bottom:2px;transition:color .3s">Visitar sitio →</a>
+      </div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;padding:2rem 1.2rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);transition:background .3s" onmouseover="this.style.background='rgba(255,255,255,.12)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">
+        <img src="logo-instituto-de-reanimacion-ireanimacion-5.webp" alt="iReanimación" style="height:50px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.9"/>
+        <p style="font-size:.62rem;color:rgba(255,255,255,.65);line-height:1.7;text-align:center;letter-spacing:.02em">Instituto de Reanimación, Capacitación, Certificación y Bienestar. Líder en educación médica de urgencias en México.</p>
+        <a href="https://reanimacion.lat" target="_blank" rel="noopener" style="font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bm);text-decoration:none;border-bottom:1px solid rgba(34,211,238,.3);padding-bottom:2px;transition:color .3s">Visitar sitio →</a>
+      </div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;padding:2rem 1.2rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);transition:background .3s" onmouseover="this.style.background='rgba(255,255,255,.12)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">
+        <img src="logo-care-zen-7.webp" alt="Care & Zen" style="height:50px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.9"/>
+        <p style="font-size:.62rem;color:rgba(255,255,255,.65);line-height:1.7;text-align:center;letter-spacing:.02em">Plataforma promotora de salud en Cozumel. Servicios de bienestar, atención médica y coordinación de eventos de salud.</p>
+        <a href="#" target="_blank" rel="noopener" style="font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bm);text-decoration:none;border-bottom:1px solid rgba(34,211,238,.3);padding-bottom:2px;transition:color .3s">Visitar sitio →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ALIADOS -->
 <section id="aliados">
